@@ -529,9 +529,9 @@ input[type="submit"]:focus {
     font-weight: 700;
 }
 
-.success-content .count-text:after {
-    content: '+';
-}
+/*.success-content .count-text:after {*/
+/*    content: '+';*/
+/*}*/
 
 .success-content p {
     font-weight: 700;

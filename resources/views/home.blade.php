@@ -16,7 +16,7 @@
                         </h1>
                         <a href="{{url('/')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
-                            {{trans('web.home.contact_us')}} <i class="fas fa-arrow-right"></i>
+                            {{trans('web.home.banner.contact_us')}} <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
