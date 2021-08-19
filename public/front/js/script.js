@@ -119,19 +119,17 @@
        if ($('.partner-wrap').length) {
            $('.partner-wrap').slick({
                infinite: true,
-               autoplay: false,
-               arrows: true,
-               prevArrow: '<button class="partner-prev"><i class="fas fa-angle-double-left"></i></button>',
-               nextArrow: '<button class="partner-next"><i class="fas fa-angle-double-right"></i></button>',
+               autoplay: true,
+               arrows: false,
                pauseOnHover: false,
                autoplaySpeed: 2000,
-               slidesToShow: 4,
+               slidesToShow: 3,
                slidesToScroll: 1,
                responsive: [
                    {
                        breakpoint: 1200,
                        settings: {
-                           slidesToShow: 4
+                           slidesToShow: 3
                        }
                    },
                    {
