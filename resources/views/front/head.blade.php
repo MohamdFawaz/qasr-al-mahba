@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Welcome || Conset - Business Consulting HTML5 Template</title>
+    <title>Welcome to Qasr Al Mahba</title>
 
     <!-- Fav Icons -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
