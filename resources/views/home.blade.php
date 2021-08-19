@@ -149,6 +149,7 @@
     <section class="video-section bg-snow pt-140 rpt-90 pb-110 rpb-60">
         <div class="container">
             <div class="row">
+                @if(count($links))
                 <div id="player" class="col-6">
                     <div class="player">
                         <div class="player__video">
@@ -162,6 +163,7 @@
                 <div id="gallery" class="col-6">
                     <div class="gallery"></div>
                 </div>
+                @endif
             </div>
         </div>
     </section>
