@@ -9,7 +9,7 @@
     <div class="header-upper">
         <div class="container clearfix">
             <div class="header-logo">
-                <a href="{{url('/')}}"><img src="{{asset('images/header_icon.png')}}" alt="header-image"></a>
+                <a href="{{url('/')}}"><img src="{{asset('images/Footer_logo.png')}}" alt="header-image"></a>
             </div>
             <div class="header-inner d-lg-flex align-items-center">
 

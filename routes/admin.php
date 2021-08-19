@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomepageBannerController;
+use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\VideoLinkController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,5 +37,14 @@ Route::group(['prefix' => "admin"], function (){
         Route::get('/edit/{id}',[VideoLinkController::class, 'edit'])->name('video_link.edit');
         Route::put('/update/{id}',[VideoLinkController::class, 'update'])->name('video_link.update');
         Route::delete('/delete/{id}',[VideoLinkController::class, 'destroy'])->name('video_link.delete');
+    });
+
+    Route::group(['prefix' => 'partner'],function () {
+        Route::get('/',[PartnersController::class, 'index'])->name('partner.index');
+        Route::get('/create',[PartnersController::class, 'create'])->name('partner.create');
+        Route::post('/',[PartnersController::class, 'store'])->name('partner.store');
+        Route::get('/edit/{id}',[PartnersController::class, 'edit'])->name('partner.edit');
+        Route::put('/update/{id}',[PartnersController::class, 'update'])->name('partner.update');
+        Route::delete('/delete/{id}',[PartnersController::class, 'destroy'])->name('partner.delete');
     });
 });

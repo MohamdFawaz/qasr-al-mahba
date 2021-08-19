@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{{route('dashboard')}}"><img src="{{asset('images/logo.png')}}" alt="Logo" srcset=""></a>
+                    <a href="{{route('dashboard')}}"><img src="{{asset('images/header_icon.png')}}" alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -30,6 +30,12 @@
                     <a href="{{route('video_link.index')}}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Video Link</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @if(Request::segment(2) == 'partner') active @endif" >
+                    <a href="{{route('partner.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Partners</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
