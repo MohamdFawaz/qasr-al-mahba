@@ -163,6 +163,7 @@ a.theme-btn {
     border-radius: 15px;
     background: var(--primary-color, #18385f);
     display: inline-block;
+    text-align: center;
 }
 
 .theme-btn i {
