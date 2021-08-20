@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/contact_us.css')}}">
+    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.0')}}">
 @endsection
 <div class="page-wrapper">
 @include('front.header')
@@ -294,81 +294,7 @@
 
 
 </div>
-
-<!--====================================================================
-                        Start Footer Section
-=====================================================================-->
-<footer class="footer-section bg-black pt-150 rpt-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-6">
-                <div class="widget menu-widget">
-                    <img src="{{asset('images/Footer_logo.png')}}" class="img-fluid footer-logo" alt="footer-logo">
-                    <p>{{trans('web.footer.about_us_content')}}</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-6">
-                <div class="widget menu-widget">
-                    <h3 class="widget-title">{{trans('web.home.footer.out_services_title')}}</h3>
-                    <ul>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.mining_license')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.game_skin')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.new_product')}}</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-6">
-                <div class="widget menu-widget">
-                    <h3 class="widget-title">{{trans('web.home.footer.contact_us')}}</h3>
-                    <ul>
-                        <li>{{trans('web.home.footer.first_address')}}</li>
-                        <li>{{trans('web.home.footer.second_address')}}</li>
-                        <li>
-                            <a href="tel:{{trans('web.home.footer.mobile_number')}}">{{trans('web.home.footer.mobile_number')}}</a>
-                        </li>
-                        <li>
-                            <a href="mailto:{{trans('web.home.footer.email')}}">{{trans('web.home.footer.email')}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-6">
-                <div class="widget menu-widget">
-                    <h3 class="widget-title">{{trans('web.home.footer.about_title')}}</h3>
-                    <ul>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_1')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_2')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_3')}}</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Copyright Area-->
-    <div class="copyright-area mt-95 rmt-45">
-        <div class="container">
-            <div class="copyright-inner align-items-center">
-                <div class="copyright-wrap order-2 order-md-1">
-                    <p>Copyright © <span>2021</span> | All Rights Reserved.</p>
-                    <!-- Scroll Top Button -->
-                    <button class="scroll-top scroll-to-target wow fadeInUp" data-wow-duration="2s" data-target="html">
-                        <i class="fas fa-angle-double-up"></i></button>
-                    <!-- footer menu -->
-                </div>
-                <ul class="footer-menu order-1 order-md-2">
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!--====================================================================
-                        End Footer Section
-=====================================================================-->
+@include('front.footer')
 <!--End pagewrapper-->
 @section('js')
     <script>
@@ -428,56 +354,5 @@
                 }
             }
         });
-        (function () {
-
-            var doc = document.documentElement;
-            var w = window;
-
-            var prevScroll = w.scrollY || doc.scrollTop;
-            var curScroll;
-            var direction = 0;
-            var prevDirection = 0;
-
-            var header = document.getElementsByClassName('main-header')[0];
-
-            var checkScroll = function () {
-
-                /*
-                ** Find the direction of scroll
-                ** 0 - initial, 1 - up, 2 - down
-                */
-
-                curScroll = w.scrollY || doc.scrollTop;
-                if (curScroll > prevScroll) {
-                    //scrolled up
-                    direction = 2;
-                } else if (curScroll < prevScroll) {
-                    //scrolled down
-                    direction = 1;
-                }
-
-                if (direction !== prevDirection) {
-                    toggleHeader(direction, curScroll);
-                }
-
-                prevScroll = curScroll;
-            };
-
-            var toggleHeader = function (direction, curScroll) {
-                if (direction === 2 && curScroll > 52) {
-
-                    //replace 52 with the height of your header in px
-
-                    header.classList.add('hide');
-                    prevDirection = direction;
-                } else if (direction === 1) {
-                    header.classList.remove('hide');
-                    prevDirection = direction;
-                }
-            };
-
-            window.addEventListener('scroll', checkScroll);
-
-        })();
     </script>
 @endsection

@@ -2,4 +2,4 @@
 
 @yield('content')
 
-@include('front.footer')
+@include('front.foot')
