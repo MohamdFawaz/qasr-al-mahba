@@ -10,7 +10,7 @@
     =====================================================================-->
     <div class="homepage-banner">
         @foreach($banners as $banner)
-            <section class="hero-section overlay" style="background: url({{$banner->image}}); background-size: contain">
+            <section class="hero-section overlay" style="background: url({{$banner->image}}); background-size: cover;">
                 <div class="container">
                     <div class="hero-inner">
                         <h1>
