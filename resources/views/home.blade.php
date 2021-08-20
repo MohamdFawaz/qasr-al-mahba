@@ -1,4 +1,7 @@
 @extends('front.app')
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/contact_us.css')}}">
+@endsection
 <div class="page-wrapper">
 @include('front.header')
 
@@ -7,7 +10,7 @@
     =====================================================================-->
     <div class="homepage-banner">
         @foreach($banners as $banner)
-            <section class="hero-section overlay" style="background: url({{$banner->image}})">
+            <section class="hero-section overlay" style="background: url({{$banner->image}}); background-size: contain">
                 <div class="container">
                     <div class="hero-inner">
                         <h1>
@@ -201,14 +204,19 @@
     =====================================================================-->
     <section class="investing-section pt-135 rpt-85 pb-145 rpb-130">
         <div class="container" style="position: relative">
-            <img src="{{asset('images/invest_map.jpg')}}" >
-            <div id="textbox">
-            </div>
-            <div id="content">
-                <h2>{{trans('web.home.invest_in_mozambique_title')}}</h2>
-                <p>
-                    {{trans('web.home.invest_in_mozambique_description')}}
-                </p>
+            <div class="row">
+                <img src="{{asset('images/invest_map.jpg')}}">
+                <div class="col-6">
+
+                </div>
+                <div class="col-6 invest-text">
+                    <div id="textbox">
+                        <h2>{{trans('web.home.invest_in_mozambique_title')}}</h2>
+                        <p>
+                            {{trans('web.home.invest_in_mozambique_description')}}
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -221,58 +229,63 @@
     <!--====================================================================
         Start Call Back Section
     =====================================================================-->
-    <section class="call-back-section text-white py-150 rpt-90 rpb-100">
-        <div class="call-back-shap"></div>
+    {{--    <section class="call-back-section text-white py-150 rpt-90 rpb-100">--}}
+    {{--        <div class="call-back-shap"></div>--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-lg-6">--}}
+    {{--                    <div class="section-title wow fadeInUp" data-wow-duration="2s">--}}
+    {{--                        <h2>{{trans('web.home.contact_us_title')}}</h2>--}}
+    {{--                        <p>{{trans('web.home.contact_us_content')}}</p>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-lg-6">--}}
+    {{--                    <form id="call-back-form" class="call-back-form" name="call-back-form" action="#" method="post">--}}
+    {{--                        <div class="row clearfix">--}}
+    {{--                            <div class="col-md-6">--}}
+    {{--                                <div class="form-group">--}}
+    {{--                                    <input type="text" name="full-name" class="form-control" value=""--}}
+    {{--                                           placeholder="{{trans('web.home.contact_us.full_name')}}" required="">--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="col-md-6">--}}
+    {{--                                <div class="form-group">--}}
+    {{--                                    <input type="email" name="email-address" class="form-control" value=""--}}
+    {{--                                           placeholder="{{trans('web.home.contact_us.email')}}" required="">--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="col-md-6">--}}
+    {{--                                <div class="form-group">--}}
+    {{--                                    <input type="text" name="phone-number" class="form-control" value=""--}}
+    {{--                                           placeholder="{{trans('web.home.contact_us.phone_number')}}" required="">--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="col-md-6">--}}
+    {{--                                <div class="form-group">--}}
+    {{--                                    <input type="text" name="subject" class="form-control" value=""--}}
+    {{--                                           placeholder="{{trans('web.home.contact_us.subject')}}" required="">--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="col-md-12 mb-10">--}}
+    {{--                                <div class="form-group">--}}
+    {{--                                    <input type="text" name="short-text" class="form-control" value=""--}}
+    {{--                                           placeholder="{{trans('web.home.contact_us.short_text')}}" required="">--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="form-group call-submit text-center">--}}
+    {{--                            <button class="theme-btn" type="submit">{{trans('web.home.contact_us.submit')}}<i--}}
+    {{--                                    class="fas fa-arrow-right"></i>--}}
+    {{--                            </button>--}}
+    {{--                        </div>--}}
+    {{--                    </form>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+    <section>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title wow fadeInUp" data-wow-duration="2s">
-                        <h2>{{trans('web.home.contact_us_title')}}</h2>
-                        <p>{{trans('web.home.contact_us_content')}}</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <form id="call-back-form" class="call-back-form" name="call-back-form" action="#" method="post">
-                        <div class="row clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="full-name" class="form-control" value=""
-                                           placeholder="{{trans('web.home.contact_us.full_name')}}" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="email-address" class="form-control" value=""
-                                           placeholder="{{trans('web.home.contact_us.email')}}" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="phone-number" class="form-control" value=""
-                                           placeholder="{{trans('web.home.contact_us.phone_number')}}" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" value=""
-                                           placeholder="{{trans('web.home.contact_us.subject')}}" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-12 mb-10">
-                                <div class="form-group">
-                                    <input type="text" name="short-text" class="form-control" value=""
-                                           placeholder="{{trans('web.home.contact_us.short_text')}}" required="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group call-submit text-center">
-                            <button class="theme-btn" type="submit">{{trans('web.home.contact_us.submit')}}<i
-                                    class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            @include('front.contact_us_form')
         </div>
     </section>
     <!--====================================================================
@@ -339,7 +352,8 @@
                 <div class="copyright-wrap order-2 order-md-1">
                     <p>Copyright © <span>2021</span> | All Rights Reserved.</p>
                     <!-- Scroll Top Button -->
-                    <button class="scroll-top scroll-to-target wow fadeInUp" data-wow-duration="2s" data-target="html"><i class="fas fa-angle-double-up"></i></button>
+                    <button class="scroll-top scroll-to-target wow fadeInUp" data-wow-duration="2s" data-target="html">
+                        <i class="fas fa-angle-double-up"></i></button>
                     <!-- footer menu -->
                 </div>
                 <ul class="footer-menu order-1 order-md-2">
