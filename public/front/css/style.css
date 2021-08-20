@@ -390,7 +390,7 @@ input[type="submit"]:focus {
 
 .hero-inner {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 35%;
 }
 
 .hero-inner .sub-title {
@@ -521,6 +521,7 @@ input[type="submit"]:focus {
     color: #ffffff;
     font-size: 35px;
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 /*.success-content .count-text:after {*/
@@ -2351,6 +2352,60 @@ input[type="submit"]:focus {
 .footer-logo {
     display: block;
 }
+.svg-inline--fa {
+    vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+    text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 0.125rem solid transparent;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #fefefe;
+    font-size: 1.5625rem;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 1.6875rem;
+    transition: all 0.5s ease;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*** Scroll Top style ***/
 .scroll-top {
