@@ -7,7 +7,7 @@
     <title>Welcome to Qasr Al Mahba</title>
 
     <!-- Fav Icons -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/header_icon.png')}}" type="image/x-icon">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('front/css/leaflet.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/spacing.min.css')}}">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.4')}}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     @yield('css')
