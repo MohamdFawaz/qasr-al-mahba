@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.0')}}">
+    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
 <div class="page-wrapper">
 @include('front.header')
@@ -229,62 +229,10 @@
     <!--====================================================================
         Start Call Back Section
     =====================================================================-->
-    {{--    <section class="call-back-section text-white py-150 rpt-90 rpb-100">--}}
-    {{--        <div class="call-back-shap"></div>--}}
-    {{--        <div class="container">--}}
-    {{--            <div class="row">--}}
-    {{--                <div class="col-lg-6">--}}
-    {{--                    <div class="section-title wow fadeInUp" data-wow-duration="2s">--}}
-    {{--                        <h2>{{trans('web.home.contact_us_title')}}</h2>--}}
-    {{--                        <p>{{trans('web.home.contact_us_content')}}</p>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-    {{--                <div class="col-lg-6">--}}
-    {{--                    <form id="call-back-form" class="call-back-form" name="call-back-form" action="#" method="post">--}}
-    {{--                        <div class="row clearfix">--}}
-    {{--                            <div class="col-md-6">--}}
-    {{--                                <div class="form-group">--}}
-    {{--                                    <input type="text" name="full-name" class="form-control" value=""--}}
-    {{--                                           placeholder="{{trans('web.home.contact_us.full_name')}}" required="">--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                            <div class="col-md-6">--}}
-    {{--                                <div class="form-group">--}}
-    {{--                                    <input type="email" name="email-address" class="form-control" value=""--}}
-    {{--                                           placeholder="{{trans('web.home.contact_us.email')}}" required="">--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                            <div class="col-md-6">--}}
-    {{--                                <div class="form-group">--}}
-    {{--                                    <input type="text" name="phone-number" class="form-control" value=""--}}
-    {{--                                           placeholder="{{trans('web.home.contact_us.phone_number')}}" required="">--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                            <div class="col-md-6">--}}
-    {{--                                <div class="form-group">--}}
-    {{--                                    <input type="text" name="subject" class="form-control" value=""--}}
-    {{--                                           placeholder="{{trans('web.home.contact_us.subject')}}" required="">--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                            <div class="col-md-12 mb-10">--}}
-    {{--                                <div class="form-group">--}}
-    {{--                                    <input type="text" name="short-text" class="form-control" value=""--}}
-    {{--                                           placeholder="{{trans('web.home.contact_us.short_text')}}" required="">--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="form-group call-submit text-center">--}}
-    {{--                            <button class="theme-btn" type="submit">{{trans('web.home.contact_us.submit')}}<i--}}
-    {{--                                    class="fas fa-arrow-right"></i>--}}
-    {{--                            </button>--}}
-    {{--                        </div>--}}
-    {{--                    </form>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </section>--}}
-    <section>
+
+    <section class="contact-us mb-100">
         <div class="container">
+            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>

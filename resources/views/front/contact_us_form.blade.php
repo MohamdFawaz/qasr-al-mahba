@@ -10,7 +10,6 @@
                     <h2 class="bt_bb_headline_tag">
                         <span class="bt_bb_headline_content">
                             <span>
-                               <h4>{{trans('web.home.contact_us_title')}}</h4>
                             </span>
                         </span>
                     </h2>
@@ -43,7 +42,7 @@
                                     <div
                                         class="bt_bb_service_content_title">{{trans('web.home.contact_us.address_2_title')}}</div>
                                     <div
-                                        class="bt_bb_service_content_text">{{trans('web.home.contact_us.address_1_desc')}}</div>
+                                        class="bt_bb_service_content_text">{{trans('web.home.contact_us.address_2_desc')}}</div>
                                 </div>
                             </div>
                             <div class="bt_bb_separator bt_bb_bottom_spacing_medium bt_bb_border_style_none"></div>
