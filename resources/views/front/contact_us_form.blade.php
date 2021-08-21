@@ -21,7 +21,8 @@
                         <div class="bt_bb_column_inner_content">
                             <div
                                 class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
-                                <span data-ico-economy="" class="bt_bb_icon_holder"><i class="fa fa-location-arrow"></i></span>
+                                <span data-ico-economy="" class="bt_bb_icon_holder"><i
+                                        class="fa fa-location-arrow"></i></span>
                                 <div class="bt_bb_service_content">
                                     <div
                                         class="bt_bb_service_content_title">{{trans('web.home.contact_us.address_1_title')}}</div>
@@ -37,7 +38,8 @@
                         <div class="bt_bb_column_inner_content">
                             <div
                                 class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
-                                <span data-ico-economy="" class="bt_bb_icon_holder"><i class="fa fa-location-arrow"></i></span>
+                                <span data-ico-economy="" class="bt_bb_icon_holder"><i
+                                        class="fa fa-location-arrow"></i></span>
                                 <div class="bt_bb_service_content">
                                     <div
                                         class="bt_bb_service_content_title">{{trans('web.home.contact_us.address_2_title')}}</div>
@@ -49,37 +51,44 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="bt_bb_row_inner" data-structure="6-6">
                     <div class="bt_bb_column_inner col-md-6 col-sm-12 bt_bb_align_left bt_bb_vertical_align_top"
                          data-width="6">
-                        <div class="bt_bb_column_inner_content">
-                            <div
-                                class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
-                                <span data-ico-economy="" class="bt_bb_icon_holder"><i class="fa fa-envelope"></i></span>
-                                <div class="bt_bb_service_content">
-                                    <div
-                                        class="bt_bb_service_content_title">{{trans('web.home.contact_us.email_us_title')}}</div>
-                                    <div
-                                        class="bt_bb_service_content_text">{{trans('web.home.contact_us.email_us_content')}}
+                        <a href="mailto:{{trans('web.home.contact_us.email_us_content')}}">
+                            <div class="bt_bb_column_inner_content">
+                                <div
+                                    class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
+                                <span data-ico-economy="" class="bt_bb_icon_holder"><i
+                                        class="fa fa-envelope"></i></span>
+                                    <div class="bt_bb_service_content">
+                                        <div
+                                            class="bt_bb_service_content_title">{{trans('web.home.contact_us.email_us_title')}}</div>
+                                        <div
+                                            class="bt_bb_service_content_text">{{trans('web.home.contact_us.email_us_content')}}
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="bt_bb_separator bt_bb_bottom_spacing_medium bt_bb_border_style_none"></div>
                             </div>
-                            <div class="bt_bb_separator bt_bb_bottom_spacing_medium bt_bb_border_style_none"></div>
-                        </div>
+                        </a>
                     </div>
                     <div class="bt_bb_column_inner col-md-6 col-sm-12 bt_bb_align_left bt_bb_vertical_align_top"
                          data-width="6">
+                        <a href="tel:{{trans('web.home.contact_us.call_us_dec')}}">
                         <div class="bt_bb_column_inner_content">
                             <div
                                 class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
                                 <span data-ico-economy="" class="bt_bb_icon_holder"><i class="fa fa-phone"></i></span>
                                 <div class="bt_bb_service_content">
-                                    <div class="bt_bb_service_content_title">{{trans('web.home.contact_us.call_us_title')}}</div>
+                                    <div
+                                        class="bt_bb_service_content_title">{{trans('web.home.contact_us.call_us_title')}}</div>
                                     <div class="bt_bb_service_content_text">{{trans('web.home.contact_us.call_us_dec')}}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
