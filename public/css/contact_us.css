@@ -543,6 +543,7 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
 }
 
 .bt_bb_icon_holder {
+    margin: auto;
     box-shadow: 0 0 0 1em #18385f inset;
     color: #fff;
     background-color: transparent;
@@ -583,4 +584,8 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
 
 .contact-us-form .btn-primary {
     background: #18385f;
+}
+
+.bt_bb_service_content {
+    text-align: center;
 }
