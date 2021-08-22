@@ -30,9 +30,9 @@
     transition: all 500ms ease;
 }
 
-.fixed-header .header-inner {
-    padding: 10px 0;
-}
+/*.fixed-header .header-inner {*/
+/*    padding: 10px 0;*/
+/*}*/
 
 /*Header to */
 .top-inner {
@@ -156,9 +156,9 @@
     background: var(--primary-color, #18385f);
 }
 
-.fixed-header .main-menu .navigation li:before {
-    bottom: -13px;
-}
+/*.fixed-header .main-menu .navigation li:before {*/
+/*    bottom: -22px;*/
+/*}*/
 
 .main-menu .navigation li:hover:before,
 .main-menu .navigation li.current-menu-item:before {
