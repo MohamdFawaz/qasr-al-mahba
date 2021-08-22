@@ -41,6 +41,15 @@
     <section class="case-details pt-150 rpt-100">
         <div class="container">
             <div class="row">
+                <div class="col-lg-8">
+                    <div class="case-details-content">
+                        <div class="section-title">
+                            <h2>{{trans('web.page.mining.guaranteed_return_of_investment_title')}}</h2>
+                        </div>
+                        <img src="{{asset('images/flag.png')}}" class="img-fluid">
+                        <p>{{trans('web.page.mining.guaranteed_return_of_investment_desc')}}</p>
+                    </div>
+                </div>
                 <div class="col-lg-4">
                     <img src="{{asset('images/mining-concept.jpeg')}}" class="img-fluid " style="width: 300px"
                          alt="mining-page-side-image">
@@ -76,15 +85,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="case-details-content">
-                        <div class="section-title">
-                            <h2>{{trans('web.page.mining.guaranteed_return_of_investment_title')}}</h2>
-                        </div>
-                        <img src="{{asset('images/flag.png')}}" class="img-fluid">
-                        <p>{{trans('web.page.mining.guaranteed_return_of_investment_desc')}}</p>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
     =====================================================================-->
     @section('js')
         <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhnmMC23noePz6DA8iEvO9_yNDGGlEaeM&callback=initMap&libraries=&v=weekly"
+            src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAPS_API_KEY')}}&callback=initMap&libraries=&v=weekly"
             async
         ></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
