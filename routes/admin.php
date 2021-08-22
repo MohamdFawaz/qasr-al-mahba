@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomepageBannerController;
+use App\Http\Controllers\Admin\MiningLicenseCodeController;
 use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\VideoLinkController;
 use Illuminate\Support\Facades\Route;
@@ -46,5 +47,14 @@ Route::group(['prefix' => "admin"], function (){
         Route::get('/edit/{id}',[PartnersController::class, 'edit'])->name('partner.edit');
         Route::put('/update/{id}',[PartnersController::class, 'update'])->name('partner.update');
         Route::delete('/delete/{id}',[PartnersController::class, 'destroy'])->name('partner.delete');
+    });
+
+    Route::group(['prefix' => 'mining-license-code'],function () {
+        Route::get('/',[MiningLicenseCodeController::class, 'index'])->name('mining-license.index');
+        Route::get('/create',[MiningLicenseCodeController::class, 'create'])->name('mining-license.create');
+        Route::post('/',[MiningLicenseCodeController::class, 'store'])->name('mining-license.store');
+        Route::get('/edit/{id}',[MiningLicenseCodeController::class, 'edit'])->name('mining-license.edit');
+        Route::put('/update/{id}',[MiningLicenseCodeController::class, 'update'])->name('mining-license.update');
+        Route::delete('/delete/{id}',[MiningLicenseCodeController::class, 'destroy'])->name('mining-license.delete');
     });
 });

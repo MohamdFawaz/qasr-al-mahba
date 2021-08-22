@@ -38,6 +38,12 @@
                         <span>Partners</span>
                     </a>
                 </li>
+                <li class="sidebar-item @if(Request::segment(2) == 'mining-license') active @endif" >
+                    <a href="{{route('mining-license.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Mining License Code</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a href="{{url('/translations')}}" class='sidebar-link'>
                         <i class="bi bi-wrench"></i>
