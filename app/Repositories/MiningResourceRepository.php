@@ -44,5 +44,34 @@ class MiningResourceRepository extends Repository
 
     }
 
+    public function update($updatedResource, $miningResouce)
+    {
+
+        if ($updatedResource->image) {
+            $imageName = time() . '.' . $updatedResource->image->extension();
+            $updatedResource->image->move(public_path('images/mining_resources'), $imageName);
+            $miningResouce->image = 'images/mining_resources/' . $imageName;
+        }
+
+        foreach ($updatedResource->title as $locale => $value) {
+            $miningResouce->translateOrNew($locale)->title = $value;
+        }
+
+        foreach ($updatedResource->description as $locale => $value) {
+            $miningResouce->translateOrNew($locale)->description = $value;
+        }
+
+        $miningResouce->save();
+        return $miningResouce;
+
+    }
+    public function destroy($id)
+    {
+        $resource = $this->find($id);
+        if ($resource->delete()) {
+            $resource->deleteImage();
+        }
+    }
+
 
 }

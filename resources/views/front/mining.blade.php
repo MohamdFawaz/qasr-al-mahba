@@ -110,6 +110,7 @@
                                              data-wow-delay=".5s">
                                             <div class="col-md-6">
                                                 <div class="middle-content">
+                                                    <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>
                                                 </div>
                                             </div>
@@ -135,6 +136,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="middle-content text-right">
+                                                    <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>
                                                 </div>
                                             </div>

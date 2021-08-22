@@ -17,4 +17,10 @@ class MiningResource extends Model
         return asset($image);
     }
 
+    public function deleteImage()
+    {
+        if(\File::exists($this->getRawOriginal('image'))) {
+            \File::delete($this->getRawOriginal('image'));
+        }
+    }
 }
