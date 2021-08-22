@@ -57,4 +57,13 @@ Route::group(['prefix' => "admin"], function (){
         Route::put('/update/{id}',[MiningLicenseCodeController::class, 'update'])->name('mining-license.update');
         Route::delete('/delete/{id}',[MiningLicenseCodeController::class, 'destroy'])->name('mining-license.delete');
     });
+
+    Route::group(['prefix' => 'mining-resource'],function () {
+        Route::get('/',[\App\Http\Controllers\Admin\MiningResourceController::class, 'index'])->name('mining-resource.index');
+        Route::get('/create',[\App\Http\Controllers\Admin\MiningResourceController::class, 'create'])->name('mining-resource.create');
+        Route::post('/',[\App\Http\Controllers\Admin\MiningResourceController::class, 'store'])->name('mining-resource.store');
+        Route::get('/edit/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'edit'])->name('mining-resource.edit');
+        Route::put('/update/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'update'])->name('mining-resource.update');
+        Route::delete('/delete/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'destroy'])->name('mining-resource.delete');
+    });
 });

@@ -100,79 +100,51 @@
                 <div class="col-4">
                     <img src="{{asset('images/construction-car.png')}}">
                 </div>
-                <div class="col-lg-12 mt-50">
-                    <div class="case-details-content">
-                        <div class="case-middle text-dark">
-                            <div class="row mt-10">
-                                <div class="col-md-6">
-                                    <div class="middle-content">
-                                        <p>{{trans('web.page.mining.resource_1_desc')}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="middle-image ml-auto">
-                                        <img src="{{asset('images/coal_pile.jpeg')}}" alt="coal-pile-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-50">
-                    <div class="case-details-content">
-                        <div class="case-middle text-dark">
-                            <div class="row mt-10">
-                                <div class="col-md-6">
-                                    <div class="middle-image">
-                                        <img src="{{asset('images/iron_ore.jpeg')}}" alt="coal-pile-image">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="middle-content">
-                                        <p>{{trans('web.page.mining.resource_2_desc')}}</p>
+                @if(count($resources))
+                    @foreach($resources as $resource)
+                        @if($loop->index % 2 == 0)
+                            <div class="col-lg-12 mt-50">
+                                <div class="case-details-content">
+                                    <div class="case-middle text-dark">
+                                        <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
+                                             data-wow-delay=".5s">
+                                            <div class="col-md-6">
+                                                <div class="middle-content">
+                                                    <p>{{$resource->description}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="middle-image ml-auto">
+                                                    <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-50">
-                    <div class="case-details-content">
-                        <div class="case-middle text-dark">
-                            <div class="row mt-10">
-                                <div class="col-md-6">
-                                    <div class="middle-content">
-                                        <p>{{trans('web.page.mining.resource_3_desc')}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="middle-image ml-auto">
-                                        <img src="{{asset('images/titanium.jpg')}}" alt="titanium-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-50">
-                    <div class="case-details-content">
-                        <div class="case-middle text-dark">
-                            <div class="row mt-10">
-                                <div class="col-md-6">
-                                    <div class="middle-image">
-                                        <img src="{{asset('images/gemstone.jpg')}}" alt="coal-pile-image">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="middle-content">
-                                        <p>{{trans('web.page.mining.resource_4_desc')}}</p>
+                        @else
+                            <div class="col-lg-12 mt-50">
+                                <div class="case-details-content">
+                                    <div class="case-middle text-dark">
+                                        <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
+                                             data-wow-delay=".5s">
+                                            <div class="col-md-6">
+                                                <div class="middle-image">
+                                                    <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="middle-content text-right">
+                                                    <p>{{$resource->description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
+                        @endif
+                    @endforeach
+                @endif
             </div>
             <div class="thumbnails mb-30">
                 <img src="{{asset('images/Mining_quarry_equipment.jpeg')}}" class="img-fluid w-100">
@@ -182,20 +154,23 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
-                        <select class="form-control" onchange="setLocationOnMap(this)" id="code-select">
+                        <select class="form-control" onchange="copyToClipboard(this)" id="code-select">
                             <option value="">{{trans('web.page.mining.select_code_placeholder')}}</option>
                             @foreach($codes as $code)
                                 <option value="{{$code->code}}">{{$code->code}}</option>
                             @endforeach
                         </select>
                     </div>
+                    <div class="text-center mt-200">
+                        {{trans('web.page.mining.code_content')}}
+                    </div>
                 </div>
                 <div class="col-6">
-                    <div id="map" style="width: 100%;height: 400px"></div>
+                    <img src="{{asset('images/4.jpg')}}">
                 </div>
-                <div class="col-12 text-center mt-50" id="redirection-section" style="display: none">
+                <div class="col-12 text-center mt-50" id="redirection-section">
                     <h4>{{trans('web.page.mining.use_the_code_for_information_and_location_preview')}}</h4>
-                    <a href="" target="_blank" id="code-link"
+                    <a href="https://portals.landfolio.com/mozambique/en/" target="_blank" id="code-link"
                        class="align-center theme-btn wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="1s"
                        style="visibility: visible; animation-duration: 1s; animation-delay: 1s; animation-name: fadeInUp;">
                         {{trans('web.page.mining.here')}}
@@ -223,35 +198,16 @@
         End Call Back Section
     =====================================================================-->
     @section('js')
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAPS_API_KEY')}}&callback=initMap&libraries=&v=weekly"
-            async
-        ></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
-            // Initialize and add the map
-            initMap = (lat, lng) => {
-                // The location of Uluru
-                const uluru = {lat: parseFloat(lat), lng: parseFloat(lng)};
-                // The map, centered at Uluru
-                const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 12,
-                    center: uluru,
-                });
-                // The marker, positioned at Uluru
-                const marker = new google.maps.Marker({
-                    position: uluru,
-                    map: map,
-                });
-            }
 
-            setLocationOnMap = (e) => {
+            copyToClipboard = (e) => {
                 const code = $('#code-select').val();
-                axios.get('/mining-license-code-details/' + code).then(response => {
-                    initMap(response.data.lat, response.data.lng);
-                    $('#code-link').attr('href', response.data.link);
-                    $('#redirection-section').css('display', 'block');
-                }, error => console.error(error));
+                var value = `<input value="${code}" id="selVal" />`;
+                $(value).insertAfter('#code-select');
+                $("#selVal").select();
+                document.execCommand("Copy");
+                $('body').find("#selVal").remove();
+                $('#redirection-section').css('display', 'block');
             }
 
         </script>
