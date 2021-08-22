@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnimalSkinCategoryController;
 use App\Http\Controllers\Admin\HomepageBannerController;
 use App\Http\Controllers\Admin\MiningLicenseCodeController;
 use App\Http\Controllers\Admin\PartnersController;
@@ -65,5 +66,14 @@ Route::group(['prefix' => "admin"], function (){
         Route::get('/edit/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'edit'])->name('mining-resource.edit');
         Route::put('/update/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'update'])->name('mining-resource.update');
         Route::delete('/delete/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'destroy'])->name('mining-resource.delete');
+    });
+
+    Route::group(['prefix' => 'animal-skin-category'],function () {
+        Route::get('/',[AnimalSkinCategoryController::class, 'index'])->name('animal-skin-category.index');
+        Route::get('/create',[AnimalSkinCategoryController::class, 'create'])->name('animal-skin-category.create');
+        Route::post('/',[AnimalSkinCategoryController::class, 'store'])->name('animal-skin-category.store');
+        Route::get('/edit/{id}',[AnimalSkinCategoryController::class, 'edit'])->name('animal-skin-category.edit');
+        Route::put('/update/{id}',[AnimalSkinCategoryController::class, 'update'])->name('animal-skin-category.update');
+        Route::delete('/delete/{id}',[AnimalSkinCategoryController::class, 'destroy'])->name('animal-skin-category.delete');
     });
 });

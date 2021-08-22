@@ -50,6 +50,12 @@
                         <span>Mining Resource</span>
                     </a>
                 </li>
+                <li class="sidebar-item @if(Request::segment(2) == 'animal-skin-category') active @endif" >
+                    <a href="{{route('animal-skin-category.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Animal Skin Category</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a href="{{url('/translations')}}" class='sidebar-link'>
                         <i class="bi bi-wrench"></i>

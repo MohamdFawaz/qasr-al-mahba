@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Welcome to Qasr Al Mahba</title>
-
+    @yield('title')
     <!-- Fav Icons -->
     <link rel="shortcut icon" href="{{asset('images/header_icon.png')}}" type="image/x-icon">
 

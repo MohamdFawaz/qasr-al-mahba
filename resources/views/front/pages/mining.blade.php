@@ -1,8 +1,14 @@
 @extends('front.layout.app')
+
+@section('title')
+    <title>{{trans('web.title.mining_license')}} | {{trans('web.title.qasr_al_mahba')}}</title>
+@endsection
+
 @section('css')
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
+
 <div class="page-wrapper">
 @include('front.layout.header')
 
