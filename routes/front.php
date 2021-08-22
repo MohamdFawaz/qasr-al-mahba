@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\MiningController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home']);
+
+Route::get('/mining-license', [MiningController::class, 'index'])->name('mining-license');
+Route::get('/mining-license-code-details/{code}', [MiningController::class, 'getMiningLicenseCodeDetails'])->name('mining-license-codes');

@@ -1,9 +1,9 @@
-@extends('front.app')
+@extends('front.layout.app')
 @section('css')
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
 <div class="page-wrapper">
-@include('front.header')
+@include('front.layout.header')
 
 <!--====================================================================
         Start Hero Section
@@ -44,7 +44,7 @@
                                 <p>{{trans('web.home.mining_license_content')}}</p>
                             </div>
                         </div>
-                        <a href="{{url('/')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
+                        <a href="{{route('mining-license')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
                             {{trans('web.home.read_more')}} <i class="fas fa-arrow-right"></i>
                         </a>
@@ -242,7 +242,7 @@
 
 
 </div>
-@include('front.footer')
+@include('front.layout.footer')
 <!--End pagewrapper-->
 @section('js')
     <script>

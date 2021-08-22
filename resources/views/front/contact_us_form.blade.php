@@ -39,12 +39,12 @@
                             <div
                                 class="bt_bb_service bt_bb_color_scheme_5 bt_bb_style_filled bt_bb_size_large bt_bb_shape_circle bt_bb_font_weight_normal bt_bb_vertical_align_top">
                                 <span data-ico-economy="" class="bt_bb_icon_holder"><i
-                                        class="fa fa-location-arrow"></i></span>
+                                        class="fa fa-file"></i></span>
                                 <div class="bt_bb_service_content">
                                     <div
-                                        class="bt_bb_service_content_title">{{trans('web.home.contact_us.address_2_title')}}</div>
+                                        class="bt_bb_service_content_title">{{trans('web.home.contact_us.contact_title')}}</div>
                                     <div
-                                        class="bt_bb_service_content_text">{{trans('web.home.contact_us.address_2_desc')}}</div>
+                                        class="bt_bb_service_content_text">{{trans('web.home.contact_us.contact_desc')}}</div>
                                 </div>
                             </div>
                             <div class="bt_bb_separator bt_bb_bottom_spacing_medium bt_bb_border_style_none"></div>

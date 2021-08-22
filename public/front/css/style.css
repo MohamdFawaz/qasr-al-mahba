@@ -436,8 +436,17 @@ input[type="submit"]:focus {
     display: flex;
     align-items: center;
 }
+.mining-page-banner {
+    height: 520px;
+    margin-top: 50px;
+    background: url(../../images/mining_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
 
-.page-banner.overlay:after {
+.page-banner.overlay:after, .mining-page-banner.overlay:after {
     position: absolute;
     content: '';
     top: 0;
@@ -448,11 +457,12 @@ input[type="submit"]:focus {
     clip-path: polygon(calc(100% - 320px) 0, 100% 100%, 0 100%, 0 0);
 }
 
-.page-banner .banner-inner {
+.page-banner .banner-inner, .mining-page-banner .banner-inner {
     padding: 160px 0 50px;
+    text-align: center;
 }
 
-.page-banner .banner-inner h2 {
+.page-banner .banner-inner h2, .mining-page-banner .banner-inner h2 {
     color: #ffffff;
     font-size: 75px;
     line-height: 1.1;
@@ -475,12 +485,12 @@ input[type="submit"]:focus {
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-    content: "\f142";
+    content: "\f068";
     font-weight: 600;
     font-size: 13px;
-    padding-left: 17px;
-    padding-right: 17px;
-    color: var(--primary-color, #18385f);
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
     font-family: "Font Awesome 5 Free";
 }
 
@@ -1902,7 +1912,6 @@ input[type="submit"]:focus {
 
 .case-middle .middle-image {
     max-width: 330px;
-    margin-left: auto;
 }
 
 .case-middle .middle-content p {
@@ -2418,7 +2427,53 @@ input[type="submit"]:focus {
     background: var(--primary-color, #18385f);
 }
 
+.mining-pie-chart {
+    background: red;
+    -webkit-mask: url(../../images/pie-chart.svg) no-repeat center;
+    mask: url(../../images/pie-chart.svg) no-repeat center;
+}
 
 
+/* Bottom right text */
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.titillium-font {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.mining-resources span {
+    color: #18395f;
+}
 
 
+.flipped {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s;
+}
+.thumbnails img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
+.image-title {
+    color: #18395f;
+    font-size: 4em;
+    align-self: center;
+    position: absolute;
+    z-index: 10;
+}
