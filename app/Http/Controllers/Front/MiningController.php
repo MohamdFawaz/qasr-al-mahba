@@ -23,7 +23,7 @@ class MiningController
     {
         $codes = $this->miningLicenseCodeService->get();
         $resources = $this->miningResourceService->get();
-        return view('front.mining', compact('codes','resources'));
+        return view('front.pages.mining', compact('codes','resources'));
     }
 
     public function getMiningLicenseCodeDetails($code)
