@@ -1,7 +1,13 @@
 @extends('front.layout.app')
+
+@section('title')
+    <title>{{trans('web.title.home')}} | {{trans('web.title.welcome_to_qasr_al_mahba')}}</title>
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
+
 <div class="page-wrapper">
 @include('front.layout.header')
 
@@ -56,7 +62,7 @@
                                 <p>{{trans('web.home.game_skin_content')}}</p>
                             </div>
                         </div>
-                        <a href="{{url('/')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
+                        <a href="{{route('animal-skin')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
                             {{trans('web.home.read_more')}} <i class="fas fa-arrow-right"></i>
                         </a>

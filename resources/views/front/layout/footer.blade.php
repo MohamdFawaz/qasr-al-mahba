@@ -16,7 +16,7 @@
                     <h3 class="widget-title">{{trans('web.home.footer.out_services_title')}}</h3>
                     <ul>
                         <li><a href="{{route('mining-license')}}">{{trans('web.home.footer.mining_license')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.game_skin')}}</a></li>
+                        <li><a href="{{route('animal-skin')}}">{{trans('web.home.footer.game_skin')}}</a></li>
                         <li><a href="{{url('/')}}">{{trans('web.home.footer.new_product')}}</a></li>
                     </ul>
                 </div>
