@@ -73,11 +73,11 @@ class MiningResourceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\MiningLicenseCode  $partners
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->service->update($request, $id);
+        return redirect()->to(route('mining-resource.index'));
     }
 
     /**
