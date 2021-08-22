@@ -28,13 +28,13 @@
             <section id="basic-vertical-layouts">
                 <div class="col-md-12">
                     <form class="form form-vertical" method="post"
-                          action="{{route('mining-resource.store')}}"
+                          action="{{route('mining-resource.update', $resource->id)}}"
                           enctype="multipart/form-data">
                         @csrf
-                        @method('post')
+                        @method('put')
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title">Car</h5>
+                                <h5 class="card-title">Mining Resource</h5>
                             </div>
                             <div class="card-body">
                                 <div class="form-body">

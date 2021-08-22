@@ -33,6 +33,12 @@ class MiningResourceService
         return $this->repository->find($id);
     }
 
+    public function update($date, $id)
+    {
+        $miningResource = $this->find($id);
+
+        return $this->repository->update($date, $miningResource);
+    }
     public function destroy($id)
     {
         return $this->repository->destroy($id);

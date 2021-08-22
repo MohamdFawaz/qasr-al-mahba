@@ -1,9 +1,4 @@
 @extends('admin.layouts.app')
-@section('css')
-    <link rel="stylesheet" href="{{asset('vendors/choices.js/choices.min.css')}}">
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
-@endsection
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -50,22 +45,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label for="google_link" class="form-label">Google Maps Link</label>
-                                                <input placeholder="Google Maps Link" class="form-control" type="text" id="google_link" name="google_link">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label for="link" class="form-label">Redirection Link</label>
-                                                <input placeholder="Redirection Link" class="form-control" type="text" id="link" name="link">
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,58 +72,5 @@
     <script src="{{asset('vendors/choices.js/choices.min.js')}}"></script>
     <script src="{{asset('js/pages/form-element-select.js')}}"></script>
 
-    <!-- filepond validation -->
-    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
 
-    <!-- filepond -->
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script>
-        loadRelatedModels = (e) => {
-            let makeId = e.value;
-            axios.get('/admin/car-model/car-make/' + makeId).then(response => {
-                emptyCarModelOptions();
-                let data = response.data.data;
-                for (let i = 0; i < data.length; i++) {
-                    $("#car_model_id").append(new Option(data[i].name, data[i].id));
-                }
-            })
-        }
-
-        emptyCarModelOptions = () => {
-            let el = $("#car_model_id");
-            el.empty();
-            el.append(new Option("-- Choose Car Model --"));
-        }
-
-        alertToChoose = () => {
-            let el = $("#car_make_id");
-            if (isNaN(el.val())) {
-                alert('Please Choose a Car Make First')
-            }
-        }
-        // register desired plugins...
-        FilePond.registerPlugin(
-            // validates the size of the file...
-            FilePondPluginFileValidateSize,
-            // validates the file type...
-            FilePondPluginFileValidateType,
-            // preview the image file type...
-            FilePondPluginImagePreview,
-
-        );
-
-        // Filepond: Multiple Files
-        FilePond.create(document.querySelector('.multiple-files-filepond'), {
-            allowImagePreview: true,
-            allowMultiple: true,
-            allowFileEncode: false,
-            required: false,
-            storeAsFile: true,
-            acceptedFileTypes: ['image/*'],
-
-        });
-
-    </script>
 @endsection
