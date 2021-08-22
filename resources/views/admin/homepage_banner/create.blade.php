@@ -119,51 +119,5 @@
 
     <!-- filepond -->
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script>
-        loadRelatedModels = (e) => {
-            let makeId = e.value;
-            axios.get('/admin/car-model/car-make/' + makeId).then(response => {
-                emptyCarModelOptions();
-                let data = response.data.data;
-                for (let i = 0; i < data.length; i++) {
-                    $("#car_model_id").append(new Option(data[i].name, data[i].id));
-                }
-            })
-        }
 
-        emptyCarModelOptions = () => {
-            let el = $("#car_model_id");
-            el.empty();
-            el.append(new Option("-- Choose Car Model --"));
-        }
-
-        alertToChoose = () => {
-            let el = $("#car_make_id");
-            if (isNaN(el.val())) {
-                alert('Please Choose a Car Make First')
-            }
-        }
-        // register desired plugins...
-        FilePond.registerPlugin(
-            // validates the size of the file...
-            FilePondPluginFileValidateSize,
-            // validates the file type...
-            FilePondPluginFileValidateType,
-            // preview the image file type...
-            FilePondPluginImagePreview,
-
-        );
-
-        // Filepond: Multiple Files
-        FilePond.create(document.querySelector('.multiple-files-filepond'), {
-            allowImagePreview: true,
-            allowMultiple: true,
-            allowFileEncode: false,
-            required: false,
-            storeAsFile: true,
-            acceptedFileTypes: ['image/*'],
-
-        });
-
-    </script>
 @endsection

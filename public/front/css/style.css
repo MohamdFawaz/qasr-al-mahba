@@ -1924,6 +1924,9 @@ input[type="submit"]:focus {
     text-align: inherit;
     margin-bottom: 25px;
 }
+.middle-content {
+    text-align: center;
+}
 
 /* Case Sidebar */
 .case-sidebar {
