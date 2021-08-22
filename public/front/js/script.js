@@ -195,8 +195,6 @@
                 autoplaySpeed: 2000,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                fade: true,
-                cssEase: 'linear',
                 responsive: [
                     {
                         breakpoint: 1200,
