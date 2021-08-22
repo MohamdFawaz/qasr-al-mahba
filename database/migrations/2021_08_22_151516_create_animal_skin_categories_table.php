@@ -27,7 +27,7 @@ class CreateAnimalSkinCategoriesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->unique(['animal_skin_category_id','locale'], 'category_id_locale_unique');
-            $table->foreign('animal_skin_category_id')->references('id')->on('animal_skin_categories')->onDelete('cascade');
+            $table->foreign('animal_skin_category_id','category_id_foreign')->references('id')->on('animal_skin_categories')->onDelete('cascade');
         });
     }
 
