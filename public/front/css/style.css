@@ -410,10 +410,7 @@ input[type="submit"]:focus {
     display: inline-block;
 }
 
-.hero-inner h1 span:after {
-    content: '.';
-    color: var(--primary-color, #18385f);
-}
+
 
 .hero-btn a {
     margin: 0 25px 15px 0;

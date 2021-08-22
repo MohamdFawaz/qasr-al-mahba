@@ -89,10 +89,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="rmb-50">
-                        <h2 class="bt_bb_headline_tag" data-wow-duration="2s">
-                            <span class="about-us-title">
-                                    <b>{{trans('web.home.who_we_are_title')}}</b>
-                            </span>
+                        <h2 class="bt_bb_headline_tag text-center" data-wow-duration="2s">
+                            <img src="{{asset('images/who_we_are.png')}}" style="width: 300px">
                         </h2>
                     </div>
                 </div>
@@ -133,10 +131,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="rmb-50">
-                        <h2 class="bt_bb_headline_tag" data-wow-duration="2s">
-                            <span class="about-us-title">
-                                    <b>{{trans('web.home.founders_title')}}</b>
-                            </span>
+                        <h2 class="bt_bb_headline_tag text-center" data-wow-duration="2s">
+                            <img src="{{asset('images/founders.png')}}" style="width: 450px">
                         </h2>
                     </div>
                 </div>
