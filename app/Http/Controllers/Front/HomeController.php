@@ -25,4 +25,9 @@ class HomeController
         return view('home',compact('banners','links','partners'));
     }
 
+    public function about()
+    {
+        return view('front.pages.about');
+    }
+
 }
