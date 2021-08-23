@@ -180,7 +180,7 @@
     =====================================================================-->
     <section class="partners-section pt-135 rpt-85 pb-145 rpb-130">
         <div class="container">
-            <h4>{{trans('web.home.our_trusted')}}<br> {{trans('web.home.partners')}}.</h4>
+            <h4>{{trans('web.home.our_trusted')}} {{trans('web.home.partners')}}.</h4>
         </div>
         <div class="row">
             <div class="col-12">
