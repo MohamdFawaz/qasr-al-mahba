@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AnimalSkinCategoryController;
 use App\Http\Controllers\Admin\HomepageBannerController;
 use App\Http\Controllers\Admin\MiningLicenseCodeController;
 use App\Http\Controllers\Admin\PartnersController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\VideoLinkController;
 use Illuminate\Support\Facades\Route;
 
@@ -75,5 +76,15 @@ Route::group(['prefix' => "admin"], function (){
         Route::get('/edit/{id}',[AnimalSkinCategoryController::class, 'edit'])->name('animal-skin-category.edit');
         Route::put('/update/{id}',[AnimalSkinCategoryController::class, 'update'])->name('animal-skin-category.update');
         Route::delete('/delete/{id}',[AnimalSkinCategoryController::class, 'destroy'])->name('animal-skin-category.delete');
+    });
+
+    Route::group(['prefix' => 'product'],function () {
+        Route::get('/',[ProductController::class, 'index'])->name('product.index');
+        Route::get('/create',[ProductController::class, 'create'])->name('product.create');
+        Route::post('/',[ProductController::class, 'store'])->name('product.store');
+        Route::get('/edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
+        Route::put('/update/{id}',[ProductController::class, 'update'])->name('product.update');
+        Route::delete('/delete/{id}',[ProductController::class, 'destroy'])->name('product.delete');
+        Route::delete('/delete/image/{id}',[ProductController::class, 'deleteProductImage'])->name('product-image.delete');
     });
 });

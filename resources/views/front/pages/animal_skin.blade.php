@@ -120,6 +120,7 @@
                         <a href="{{route('show-animal-skin', $category->id)}}">
                             <img src="{{$category->image}}" class="img-fluid category-img img-border-solid"
                                  alt="{{$category->id}}-image">
+                            <h4 class="text-center titillium-font mt-10" style="color: #18395f;">{{$category->name}}</h4>
                         </a>
                     </div>
                 @endforeach
