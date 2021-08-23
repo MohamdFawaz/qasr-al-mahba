@@ -65,32 +65,49 @@ class AnimalSkinCategoryRepository extends Repository
 
     }
 
-    public function update($newProduct, $id)
+    public function update($updatedCategory, $id)
     {
         $category = $this->model::query()->find($id);
 
 
-        if ($newProduct->image) {
-            $imageName = time() . '.' . $newProduct->image->extension();
-            $newProduct->image->move(public_path('images/animal_skin_category'), $imageName);
+        if ($updatedCategory->image) {
+            $imageName = time() . '.' . $updatedCategory->image->extension();
+            $updatedCategory->image->move(public_path('images/animal_skin_category'), $imageName);
             $category->image = 'images/animal_skin_category/' . $imageName;
             $category->deleteImage();
         }
 
 
-        foreach ($newProduct->title as $locale => $value) {
+        foreach ($updatedCategory->title as $locale => $value) {
             $category->translateOrNew($locale)->title = $value;
         }
 
-        foreach ($newProduct->name as $locale => $value) {
+        foreach ($updatedCategory->name as $locale => $value) {
             $category->translateOrNew($locale)->name = $value;
         }
 
-        foreach ($newProduct->description as $locale => $value) {
+        foreach ($updatedCategory->description as $locale => $value) {
             $category->translateOrNew($locale)->description = $value;
         }
 
         $category->save();
+        if ($updatedCategory->category_images) {
+            $categoryImages = [];
+            foreach ($updatedCategory->category_images as $image) {
+                if (is_file($image)) {
+                    $imageName = time() . random_int(0, 1000) . '.' . $image->extension();
+                    $image->move(public_path('images/animal_skin_category'), $imageName);
+                    $categoryImages[] = [
+                        'animal_skin_category_id' => $category->id,
+                        'image' => 'images/animal_skin_category/' . $imageName
+                    ];
+                }
+            }
+
+            if (count($categoryImages))
+                $category->images()->insert($categoryImages);
+        }
+
         return $category;
     }
 

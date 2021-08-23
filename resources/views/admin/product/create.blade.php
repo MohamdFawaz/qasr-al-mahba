@@ -61,34 +61,10 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="price">Price</label>
-                                                <input type="number" id="price"
+                                                <label for="link">Link</label>
+                                                <input type="text" id="link"
                                                        class="form-control"
-                                                       name="price" placeholder="Product Price" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="delivery_fees">Price</label>
-                                                <input type="number" id="delivery_fees"
-                                                       class="form-control"
-                                                       name="delivery_fees" placeholder="Delivery Fees" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="brand_name">Brand Name</label>
-                                                <input type="text" id="brand_name"
-                                                       class="form-control"
-                                                       name="brand_name" placeholder="Brand Name" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="brand_link">Brand Link</label>
-                                                <input type="text" id="brand_link"
-                                                       class="form-control"
-                                                       name="brand_link" placeholder="Brand Link" required>
+                                                       name="link" placeholder="Link" required>
                                             </div>
                                         </div>
 
@@ -122,16 +98,6 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <label for="title-{{$locale}}">Title</label>
-                                                                <input type="text" id="title-{{$locale}}"
-                                                                       class="form-control"
-                                                                       name="title[{{$locale}}]"
-                                                                       placeholder="{{ucwords($locale)}} Product Title"
-                                                                       required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="form-group">
                                                                 <label for="title-{{$locale}}">Name</label>
                                                                 <input type="text" id="name-{{$locale}}"
                                                                        class="form-control"
@@ -140,38 +106,11 @@
                                                                        required>
                                                             </div>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label for="description-{{$locale}}">Description</label>
-                                                                <textarea class="form-control"
-                                                                          id="description-{{$locale}}"
-                                                                          name="description[{{$locale}}]"
-                                                                          placeholder="{{ucwords($locale)}} Product Description"
-                                                                          rows="3"></textarea>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
-                                </div>
-                            </div>
-                            <div class="divider">
-                                <div class="divider-text">Product Images</div>
-                            </div>
-                            <div class="col-12 col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Multiple Files</h5>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <!-- File uploader with multiple files upload -->
-                                            <input type="file" name="product_images[]" class="multiple-files-filepond"
-                                                   multiple>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

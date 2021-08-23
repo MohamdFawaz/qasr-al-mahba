@@ -1,9 +1,4 @@
 @extends('admin.layouts.app')
-@section('css')
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-          rel="stylesheet">
-@endsection
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -62,40 +57,14 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="price">Price</label>
-                                                <input type="number" id="price"
+                                                <label for="link">Link</label>
+                                                <input type="text" id="link"
                                                        class="form-control"
-                                                       name="price" placeholder="Product Price" required
-                                                       value="{{$product->price}}">
+                                                       name="link" placeholder="Link" required
+                                                       value="{{$product->link}}">
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="delivery_fees">Price</label>
-                                                <input type="number" id="delivery_fees"
-                                                       class="form-control"
-                                                       name="delivery_fees" placeholder="Delivery Fees"
-                                                       value="{{$product->delivery_fees}}" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="brand_name">Brand Name</label>
-                                                <input type="text" id="brand_name"
-                                                       class="form-control"
-                                                       name="brand_name" placeholder="Brand Name"
-                                                       value="{{$product->brand_name}}" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="brand_link">Brand Link</label>
-                                                <input type="text" id="brand_link"
-                                                       class="form-control"
-                                                       name="brand_link" placeholder="Brand Link"
-                                                       value="{{$product->brand_link}}" required>
-                                            </div>
-                                        </div>
+
 
                                         <div class="col-12">
                                             <div class="mb-3">
@@ -129,17 +98,6 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <label for="title-{{$locale}}">Title</label>
-                                                                <input type="text" id="title-{{$locale}}"
-                                                                       class="form-control"
-                                                                       name="title[{{$locale}}]"
-                                                                       placeholder="{{ucwords($locale)}} Product Title"
-                                                                       required
-                                                                       value="{{$product->translate($locale)->title}}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="form-group">
                                                                 <label for="title-{{$locale}}">Name</label>
                                                                 <input type="text" id="name-{{$locale}}"
                                                                        class="form-control"
@@ -149,46 +107,11 @@
                                                                        value="{{$product->translate($locale)->name}}">
                                                             </div>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label for="description-{{$locale}}">Description</label>
-                                                                <textarea class="form-control"
-                                                                          id="description-{{$locale}}"
-                                                                          name="description[{{$locale}}]"
-                                                                          placeholder="{{ucwords($locale)}} Product Description"
-                                                                          rows="3">{{$product->translate($locale)->description}}</textarea>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
-                                </div>
-                            </div>
-                            <div class="divider">
-                                <div class="divider-text">Product Images</div>
-                            </div>
-                            <div class="col-12 col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Multiple Files</h5>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <!-- File uploader with multiple files upload -->
-                                            <input type="file" name="product_images[]" class="multiple-files-filepond"
-                                                   multiple>
-
-                                            <div class="mt-3">
-                                                @foreach($product->images as $image)
-                                                    <img src="{{$image->image}}" style="width: 200px; cursor: pointer"
-                                                         id="product-image-{{$image->id}}"
-                                                         onclick="deleteImage({{$image->id}})">
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -211,55 +134,36 @@
 
 @endsection
 
-@section('js')
-    <script src="{{asset('vendors/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendors/choices.js/choices.min.js')}}"></script>
-    <script src="{{asset('js/pages/form-element-select.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script>
-        deleteImage = (id) => {
-            if (confirm("are you sure you want to delete this image?")) {
-                axios.delete('/admin/product/delete/image/' + id).then(response => {
-                    console.log(response);
-                    $('#product-image-' + id).remove();
-                }, error => {
-                    console.log(error);
-                })
-            }
-        }
-    </script>
-    <!-- filepond validation -->
-    <script
-        src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-    <script
-        src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<!-- filepond validation -->
+<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
 
-    <!-- filepond -->
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<!-- filepond -->
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
-    <script>
-        // register desired plugins...
-        FilePond.registerPlugin(
-            // validates the size of the file...
-            FilePondPluginFileValidateSize,
-            // validates the file type...
-            FilePondPluginFileValidateType,
-            // preview the image file type...
-            FilePondPluginImagePreview,
-        );
+<script>
+    // register desired plugins...
+    FilePond.registerPlugin(
+        // validates the size of the file...
+        FilePondPluginFileValidateSize,
+        // validates the file type...
+        FilePondPluginFileValidateType,
+        // preview the image file type...
+        FilePondPluginImagePreview,
 
-        // Filepond: Multiple Files
-        FilePond.create(document.querySelector('.multiple-files-filepond'), {
-            allowImagePreview: true,
-            allowMultiple: true,
-            allowFileEncode: false,
-            required: false,
-            storeAsFile: true,
-            acceptedFileTypes: ['image/*'],
+    );
 
-        });
+    // Filepond: Multiple Files
+    FilePond.create(document.querySelector('.multiple-files-filepond'), {
+        allowImagePreview: true,
+        allowMultiple: true,
+        allowFileEncode: false,
+        required: false,
+        storeAsFile: true,
+        acceptedFileTypes: ['image/*'],
 
-    </script>
-@endsection
+    });
+
+</script>
