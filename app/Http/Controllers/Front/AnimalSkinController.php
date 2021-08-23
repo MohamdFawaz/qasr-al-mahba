@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Front;
 
 use App\Services\AnimalSkinCategoryService;
+use App\Services\ProductService;
 
 class AnimalSkinController
 {
 
 
-    private $animalSkinCategoryService;
-    public function __construct(AnimalSkinCategoryService $animalSkinCategoryService)
+    private $animalSkinCategoryService, $productService;
+    public function __construct(AnimalSkinCategoryService $animalSkinCategoryService, ProductService $productService)
     {
         $this->animalSkinCategoryService = $animalSkinCategoryService;
+        $this->productService = $productService;
     }
 
     public function index()
@@ -23,9 +25,10 @@ class AnimalSkinController
     public function show($id)
     {
         $category = $this->animalSkinCategoryService->find($id);
-        if ($category) {
+        if (!$category) {
             abort(404);
         }
-        return '';
+        $products = $this->productService->getByCategoryId($id);
+        return view('front.pages.show_animal_skin',compact('category', 'products'));
     }
 }
