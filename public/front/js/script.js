@@ -147,6 +147,37 @@
                ]
            });
        }
+       if ($('.who-we-are-wrapper').length) {
+           $('.who-we-are-wrapper').slick({
+               infinite: true,
+               autoplay: true,
+               arrows: false,
+               pauseOnHover: false,
+               autoplaySpeed: 2000,
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               responsive: [
+                   {
+                       breakpoint: 1200,
+                       settings: {
+                           slidesToShow: 1
+                       }
+                   },
+                   {
+                       breakpoint: 768,
+                       settings: {
+                           slidesToShow: 1
+                       }
+                   },
+                   {
+                       breakpoint: 400,
+                       settings: {
+                           slidesToShow: 1
+                       }
+                   }
+               ]
+           });
+       }
 
        if ($('.category-products-wrapper').length) {
             $('.category-products-wrapper').slick({

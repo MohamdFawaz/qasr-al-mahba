@@ -37,7 +37,7 @@
                                 <li><a href="{{url('/')}}">{{trans('web.header.services')}}</a></li>
                                 <li><a href="{{url('/')}}">{{trans('web.header.product')}} </a></li>
                                 <li><a href="{{url('/')}}">{{trans('web.header.contact')}} </a></li>
-                                <li><a href="{{url('/')}}">{{trans('web.header.about')}} </a></li>
+                                <li><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
                             </ul>
                         </div>
 
