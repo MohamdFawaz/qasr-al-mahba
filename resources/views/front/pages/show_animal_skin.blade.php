@@ -71,9 +71,8 @@
                 <h2 class="titillium-font text-center"
                     style="color: #18395f;">{{trans('web.page.animal_skin.realistic_image_for')}} {{ $category->name }}</h2>
                 @foreach($category->images as $image)
-                    <div class="col-lg-6 col-md-12 col-sm-12 text-center m-10">
-                        <img src="{{$image->image}}" class="img-fluid category-img img-border-solid"
-                             alt="{{$image->id}}-image">
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                        <img src="{{$image->image}}" class="img-fluid category-img img-border-solid m-10" alt="{{$image->id}}-image">
                     </div>
                 @endforeach
             </div>
