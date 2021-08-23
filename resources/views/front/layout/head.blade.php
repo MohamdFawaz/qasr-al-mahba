@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{asset('front/css/leaflet.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/spacing.min.css')}}">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.10')}}">
+    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.11')}}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     @yield('css')

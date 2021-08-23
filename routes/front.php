@@ -27,3 +27,5 @@ Route::get('/animal-skin', [AnimalSkinController::class, 'index'])->name('animal
 Route::get('/animal-skin/{id}', [AnimalSkinController::class, 'show'])->name('show-animal-skin');
 
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
