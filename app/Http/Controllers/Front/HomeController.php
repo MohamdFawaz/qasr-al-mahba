@@ -31,4 +31,10 @@ class HomeController
         return view('front.pages.about',compact('partners'));
     }
 
+    public function contact()
+    {
+        $partners = $this->partnerService->get();
+        return view('front.pages.contact', compact('partners'));
+    }
+
 }

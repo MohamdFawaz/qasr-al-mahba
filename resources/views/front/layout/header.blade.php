@@ -36,7 +36,7 @@
                                 </li>
                                 <li><a href="{{url('/')}}">{{trans('web.header.services')}}</a></li>
                                 <li><a href="{{url('/')}}">{{trans('web.header.product')}} </a></li>
-                                <li><a href="{{url('/')}}">{{trans('web.header.contact')}} </a></li>
+                                <li><a href="{{route('contact')}}">{{trans('web.header.contact')}} </a></li>
                                 <li><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
                             </ul>
                         </div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="menu-number">
-                    <a href="{{url('/')}}"><i class="flaticon-edit"></i>{{trans('web.header.get_fair_quote')}}</a>
+                    <a href="{{route('contact')}}"><i class="flaticon-edit"></i>{{trans('web.header.get_fair_quote')}}</a>
                 </div>
             </div>
 
