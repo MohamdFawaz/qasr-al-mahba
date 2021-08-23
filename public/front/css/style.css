@@ -2484,8 +2484,7 @@ input[type="submit"]:focus {
 }
 
 .category-img {
-    width: 75%;
-    height: 85%;
+    max-width: 500px;
 }
 
 .text-shadow-white {
@@ -2607,4 +2606,15 @@ input[type="submit"]:focus {
 }
 .item .thumb img, .item img {
     width: 100%;
+}
+.bt_bb_column_inner > a:focus, a:hover {
+    text-decoration: none !important;
+}
+.bt_bb_service_content_text {
+    color: #000;
+}
+
+.contact-us-form .form-control {
+    border: none !important;
+    border-radius: 0 !important;
 }
