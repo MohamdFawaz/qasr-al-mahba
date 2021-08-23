@@ -10,9 +10,10 @@ class Product extends Model
 {
     use HasFactory, Translatable;
 
-    protected $fillable = ['price', 'image','brand_name','brand_link','delivery_fees','animal_skin_category_id'];
+    protected $fillable = ['image','animal_skin_category_id'];
 
-    public $translatedAttributes = ['name','title', 'description'];
+    public $translatedAttributes = ['name'];
+
 
 
     public function getImageAttribute($image)
@@ -23,6 +24,12 @@ class Product extends Model
     public function images()
     {
         return $this->hasMany(ProductImage::class,'product_id');
+    }
+    public function deleteImage()
+    {
+        if(\File::exists($this->getRawOriginal('image'))) {
+            \File::delete($this->getRawOriginal('image'));
+        }
     }
 
 }

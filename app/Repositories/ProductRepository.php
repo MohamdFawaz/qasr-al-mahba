@@ -30,10 +30,7 @@ class ProductRepository extends Repository
         }
 
         $product->animal_skin_category_id = $newProduct->animal_skin_category_id;
-        $product->price = $newProduct->price;
-        $product->brand_name = $newProduct->brand_name;
-        $product->brand_link = $newProduct->brand_link;
-        $product->delivery_fees = $newProduct->delivery_fees;
+        $product->link = $newProduct->link;
 
         $product->image = isset($imageName) ? 'images/product/' . $imageName : null;
 
@@ -41,38 +38,17 @@ class ProductRepository extends Repository
             $product->translateOrNew($locale)->name = $value;
         }
 
-        foreach ($newProduct->title as $locale => $value) {
-            $product->translateOrNew($locale)->title = $value;
-        }
-
-        foreach ($newProduct->description as $locale => $value) {
-            $product->translateOrNew($locale)->description = $value;
-        }
 
         $product->save();
-        if ($newProduct->product_images) {
-            $productImages = [];
-            foreach ($newProduct->product_images as $image) {
-                if (is_file($image)) {
-                    $imageName = time() . random_int(0, 1000) . '.' . $image->extension();
-                    $image->move(public_path('images/product'), $imageName);
-                    $productImages[] = [
-                        'product_id' => $product->id,
-                        'image' => 'images/product/' . $imageName
-                    ];
-                }
-            }
-
-            if (count($productImages))
-                $product->images()->insert($productImages);
-
-        }
         return $product;
 
     }
 
     public function update($newProduct, $id)
     {
+
+        /** @var Product $newProduct */
+        /** @var Product $product */
         $product = $this->model::query()->find($id);
 
 
@@ -83,43 +59,14 @@ class ProductRepository extends Repository
             $product->deleteImage();
         }
 
-
         $product->animal_skin_category_id = $newProduct->animal_skin_category_id;
-        $product->price = $newProduct->price;
-        $product->brand_name = $newProduct->brand_name;
-        $product->brand_link = $newProduct->brand_link;
-        $product->delivery_fees = $newProduct->delivery_fees;
-
-        foreach ($newProduct->title as $locale => $value) {
-            $product->translateOrNew($locale)->title = $value;
-        }
+        $product->link = $newProduct->link;
 
         foreach ($newProduct->name as $locale => $value) {
             $product->translateOrNew($locale)->name = $value;
         }
 
-        foreach ($newProduct->description as $locale => $value) {
-            $product->translateOrNew($locale)->description = $value;
-        }
-
         $product->save();
-
-        if ($newProduct->product_images) {
-
-            foreach ($newProduct->product_images as $image) {
-                if (is_file($image)) {
-                    $imageName = time() . random_int(0, 1000) . '.' . $image->extension();
-                    $image->move(public_path('images/product'), $imageName);
-                    $productImages[] = [
-                        'product_id' => $product->id,
-                        'image' => 'images/product/' . $imageName
-                    ];
-                }
-            }
-
-            if (count($productImages))
-                $product->images()->insert($productImages);
-        }
 
         return $product;
     }

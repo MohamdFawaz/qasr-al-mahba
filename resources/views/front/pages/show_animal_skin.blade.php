@@ -8,7 +8,6 @@
 @section('css')
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 @endsection
 
 
@@ -73,7 +72,7 @@
                     style="color: #18395f;">{{trans('web.page.animal_skin.realistic_image_for')}} {{ $category->name }}</h2>
                 @foreach($category->images as $image)
                     <div class="col-lg-6 col-md-12 col-sm-12 text-center">
-                        <img src="{{$image->image}}" class="img-fluid category-img img-border-solid"
+                        <img src="{{$image->image}}" class="img-fluid category-img img-border-solid m-10"
                              alt="{{$image->id}}-image">
                     </div>
                 @endforeach
@@ -84,61 +83,46 @@
         Start Product Section
     =====================================================================-->
 
+    @if(count($products))
     <section class="products-slider mb-50">
-        <h2 class="titillium-font text-center" style="color: #18395f;">{{$category->name}} {{trans('web.show_animal_skin.famous_products')}}</h2>
+        <h2 class="titillium-font text-center"
+            style="color: #18395f;">{{$category->name}} {{trans('web.show_animal_skin.famous_products')}}</h2>
         <div class="tcb-product-slider">
             <div class="container">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div class="">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <div class="row">
+                            <div class="row category-products-wrapper">
                                 @foreach($products as $product)
-                                    <div class="col-xs-6 col-sm-3">
-                                        <div class="tcb-product-item">
-                                            <div class="tcb-product-photo">
-                                                <a href="#" target="_blank"><img src="{{$product->image}}" class="img-responsive" alt="a"/></a>
+                                    @if($product->link)
+                                        <a href="#">
+                                            @endif
+                                            <div class="col">
+                                                <div class="tcb-product-item">
+                                                    <div class="tcb-product-photo">
+                                                        <img src="{{$product->image}}" class="img-responsive" alt="a"/>
+                                                    </div>
+                                                    <div class="tcb-product-info">
+                                                        <div class="tcb-product-title">
+                                                            <h4>{{$product->name}}</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="tcb-product-info">
-                                                <div class="tcb-product-title">
-                                                    <h4><a href="#">{{$product->name}}</a></h4>
-                                                </div>
-                                                <div class="tcb-hline"></div>
-                                                <div class="tcb-product-price font-weight-bold">
-                                                    {{$product->price}} AED
-                                                </div>
-                                                <a href="{{$product->brand_link}}" target="_blank">
-                                                    {{$product->brand_name}}
-                                                </a>
-                                                <div class="tcb-product-delivery">
-                                                    @if($product->delivery_fees > 0)
-                                                        AED {{$product->delivery_fees}} {{trans('web.page.show_animal_skin.product.delivery')}}
-                                                    @else
-                                                        {{trans('web.page.show_animal_skin.product.free_delivery')}}
-                                                    @endif
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                            @if($product->link)
+                                        </a>
+                                    @endif
                                 @endforeach
 
                             </div>
                         </div>
                     </div>
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
+    @endif
     <!--====================================================================
         End Product Section
     =====================================================================-->
@@ -157,8 +141,6 @@
         End Call Back Section
     =====================================================================-->
     @section('js')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <script>
 

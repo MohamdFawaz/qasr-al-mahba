@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
-
+@section('css')
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+@endsection
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -108,6 +111,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="divider">
+                            <div class="divider-text">Category Images</div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Multiple Files</h5>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <!-- File uploader with multiple files upload -->
+                                        <input type="file" name="category_images[]" class="multiple-files-filepond" multiple>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary me-1 mb-1">
                                 Submit
@@ -131,4 +150,38 @@
     <script src="{{asset('vendors/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendors/choices.js/choices.min.js')}}"></script>
     <script src="{{asset('js/pages/form-element-select.js')}}"></script>
+
+
+    <!-- filepond validation -->
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+
+    <!-- filepond -->
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <script>
+        // register desired plugins...
+        FilePond.registerPlugin(
+            // validates the size of the file...
+            FilePondPluginFileValidateSize,
+            // validates the file type...
+            FilePondPluginFileValidateType,
+            // preview the image file type...
+            FilePondPluginImagePreview,
+
+        );
+
+        // Filepond: Multiple Files
+        FilePond.create(document.querySelector('.multiple-files-filepond'), {
+            allowImagePreview: true,
+            allowMultiple: true,
+            allowFileEncode: false,
+            required: false,
+            storeAsFile: true,
+            acceptedFileTypes: ['image/*'],
+
+        });
+
+    </script>
 @endsection

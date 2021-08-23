@@ -148,6 +148,37 @@
            });
        }
 
+       if ($('.category-products-wrapper').length) {
+            $('.category-products-wrapper').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: false,
+                pauseOnHover: false,
+                autoplaySpeed: 2000,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+            });
+        }
 
         /* Case Slider */
        if ($('.case-wrap').length) {
