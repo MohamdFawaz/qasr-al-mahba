@@ -2403,7 +2403,7 @@ input[type="submit"]:focus {
     margin-bottom: 0.25rem;
 }
 
-.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus, .tiles-section-holder:hover {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -2496,7 +2496,9 @@ input[type="submit"]:focus {
 .category-title {
     color: #18395f;
 }
-
+.category-title span {
+    color: #000 !important;
+}
 
 
 .tcb-product-slider .carousel-control {
@@ -2621,4 +2623,113 @@ input[type="submit"]:focus {
 .contact-us-form .form-control {
     border: none !important;
     border-radius: 0 !important;
+}
+
+.who-we-are-wrapper .slick-slide {
+    height: 350px !important;
+}
+
+.underline {
+    position: relative;
+    margin-bottom: 30px;
+}
+.underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+    bottom: -15px;
+
+
+    /******
+    optional values below
+    ******/
+
+    /* center - (optional) use with adjusting width   */
+    margin: 0 auto;
+    left: 0;
+    width: 20%;
+    background: orange;
+
+    /* optional animation */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+
+/* optional hover classes used with anmiation */
+.underline:hover:after {
+    width: 50%;
+    background: #18395f;
+}
+.tiles-section-holder {
+    box-shadow: 0 0 0 1em #18385f inset;
+    color: #fff;
+    background-color: transparent;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-align-self: initial;
+    align-self: initial;
+    margin-bottom: 0;
+    flex-basis: auto;
+    -webkit-transition: all 280ms ease;
+    -moz-transition: all 280ms ease;
+    transition: all 280ms ease;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    padding: 8px 7px;
+}
+
+.why-us-images {
+    display: block;
+    text-align: center;
+}
+.why-us-image {
+    max-width: 75px;
+    text-align: center;
+}
+.our-expertise {
+    background: #f1f1f1;
+    padding: 35px 40px;
+}
+
+.expertise-content {
+    padding: 30px 100px;
+}
+.expertise-list li {
+    margin-top: 10px;
+}
+.expertise-list li:before {
+    content: '✔';
+    width: 25px;
+    font-size: 18px;
+    height: 20px;
+    color: #18395f;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: inline-table;
+}
+
+.expertise-image {
+    position: absolute;
+    top: -110px;
+    left: -80px;
 }

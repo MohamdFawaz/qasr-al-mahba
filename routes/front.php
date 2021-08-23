@@ -25,3 +25,5 @@ Route::get('/mining-license-code-details/{code}', [MiningController::class, 'get
 Route::get('/animal-skin', [AnimalSkinController::class, 'index'])->name('animal-skin');
 
 Route::get('/animal-skin/{id}', [AnimalSkinController::class, 'show'])->name('show-animal-skin');
+
+Route::get('/about', [HomeController::class, 'about'])->name('about');
