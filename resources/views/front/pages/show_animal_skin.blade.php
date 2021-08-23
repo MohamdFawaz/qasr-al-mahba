@@ -25,8 +25,8 @@
                 <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{url('/')}}">{{trans('web.breadcrumb.home')}}</a></li>
-                        <li class="breadcrumb-item active"
-                            aria-current="page">{{trans('web.breadcrumb.animal_skin')}}</li>
+                        <li class="breadcrumb-item active" style="color: #fff"
+                            aria-current="page">{{trans('web.breadcrumb.show_animal_skin')}}</li>
                     </ol>
                 </nav>
                 <h2 class="text-center wow fadeInUp"
@@ -56,7 +56,7 @@
                             <h2 class="titillium-font mt-10 category-title"
                                 style="color: #18395f;"> {{$category->title}}</h2>
                         </div>
-                        <img src="{{$category->image}}" class="img-fluid float-right">
+                        <img src="{{$category->image}}" class="img-fluid float-right" style="width: 500px">
                         <p class="text-center">{{$category->description}}</p>
                     </div>
                 </div>
