@@ -6,7 +6,7 @@
 <script src="{{asset('front/js/leaflet.min.js')}}"></script>
 <script src="{{asset('front/js/appear.js')}}"></script>
 <!-- Custom script -->
-<script src="{{asset('front/js/script.js?v=1.0')}}"></script>
+<script src="{{asset('front/js/script.js?v=1.1')}}"></script>
 @yield('js')
 </body>
 </html>
