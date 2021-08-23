@@ -87,7 +87,7 @@
         <h2 class="titillium-font text-center"
             style="color: #18395f;">{{$category->name}} {{trans('web.show_animal_skin.famous_products')}}</h2>
         <div class="tcb-product-slider">
-            <div class="container">
+            <div class="container" style="height: 400px">
                 <div class="">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
