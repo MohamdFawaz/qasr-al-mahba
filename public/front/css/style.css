@@ -375,7 +375,6 @@ input[type="submit"]:focus {
 }
 
 
-
 /****************************************************** */
 /****************** 02. Hero Section  *************** */
 /****************************************************** */
@@ -411,7 +410,6 @@ input[type="submit"]:focus {
 }
 
 
-
 .hero-btn a {
     margin: 0 25px 15px 0;
 }
@@ -433,6 +431,7 @@ input[type="submit"]:focus {
     display: flex;
     align-items: center;
 }
+
 .mining-page-banner {
     height: 520px;
     margin-top: 50px;
@@ -442,6 +441,7 @@ input[type="submit"]:focus {
     display: flex;
     align-items: center;
 }
+
 .animal-skin-page-banner {
     height: 520px;
     margin-top: 50px;
@@ -937,15 +937,18 @@ input[type="submit"]:focus {
     top: 0;
     right: 0;
 }
-#textbox p, #textbox h2{
+
+#textbox p, #textbox h2 {
     text-align: center;
 }
+
 .invest-text {
     position: absolute;
     top: 0;
     right: 0;
     height: 250px;
 }
+
 /****************************************************** */
 /****************** 08. Cases Section  **************** */
 /****************************************************** */
@@ -1924,6 +1927,7 @@ input[type="submit"]:focus {
     text-align: inherit;
     margin-bottom: 25px;
 }
+
 .middle-content {
     text-align: center;
 }
@@ -2370,6 +2374,7 @@ input[type="submit"]:focus {
 .footer-logo {
     display: block;
 }
+
 .svg-inline--fa {
     vertical-align: -0.200em;
 }
@@ -2407,22 +2412,6 @@ input[type="submit"]:focus {
 .rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
     font-size: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*** Scroll Top style ***/
@@ -2467,6 +2456,7 @@ input[type="submit"]:focus {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+
 .thumbnails {
     display: flex;
     justify-content: center;
@@ -2474,11 +2464,13 @@ input[type="submit"]:focus {
     overflow: hidden;
     transition: transform .3s;
 }
+
 .thumbnails img {
     width: 100%;
     object-fit: cover;
     object-position: 50% 20%;
 }
+
 .image-title {
     color: #18395f;
     font-size: 4em;
@@ -2486,13 +2478,133 @@ input[type="submit"]:focus {
     position: absolute;
     z-index: 10;
 }
+
 .img-border-solid {
     border: 2px solid #000;
 }
+
 .category-img {
     width: 75%;
     height: 85%;
 }
+
 .text-shadow-white {
     text-shadow: -10px 0 10px #fff, 0 10px 10px #fff, 10px 0 10px #fff, 0 -10px 10px #fff;
+}
+
+
+.category-title {
+    color: #18395f;
+}
+
+
+
+.tcb-product-slider .carousel-control {
+    width: 5%;
+}
+
+.tcb-product-item {
+    border: 1px solid #cdc9c9;
+}
+
+.tcb-product-item a {
+    color: #147196;
+}
+
+.tcb-product-item a:hover {
+    text-decoration: none;
+}
+
+.tcb-product-item .tcb-hline {
+    margin: 10px 0;
+    height: 1px;
+    background: #ccc;
+}
+
+@media all and (max-width: 768px) {
+    .tcb-product-item {
+        margin-bottom: 30px;
+    }
+}
+
+.tcb-product-photo {
+    text-align: center;
+    height: 180px;
+    background: #fff;
+}
+
+.tcb-product-photo img {
+    height: 100%;
+    display: inline-block;
+}
+
+.tcb-product-info {
+    padding: 15px;
+}
+
+.tcb-product-title h4 {
+    margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tcb-product-rating {
+    color: #acacac;
+}
+
+.tcb-product-rating .active {
+    color: #FFB500;
+}
+
+.tcb-product-price {
+    color: #000;
+    font-size: 18px;
+}
+
+.tcb-product-delivery {
+    color: #535050;
+    font-size: 18px;
+}
+
+
+.details {
+    margin: 50px 0;
+}
+
+.details h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.details .back-link {
+    text-align: center;
+}
+
+.details .back-link a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 15px 30px;
+    background: #333;
+    color: #fff;
+    border-radius: 24px;
+}
+
+.details .back-link a svg {
+    margin-right: 10px;
+    vertical-align: text-top;
+    display: inline-block;
+}
+/* CSS used here will be applied after bootstrap.css */
+#carousel {
+    margin-top: 0px;
+}
+.item .thumb {
+    width: 25%;
+    cursor: pointer;
+    float: left;
+}
+.item .thumb img, .item img {
+    width: 100%;
 }

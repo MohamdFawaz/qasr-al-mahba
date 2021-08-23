@@ -6,13 +6,14 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AnimalSkinCategory extends Model
+class Product extends Model
 {
     use HasFactory, Translatable;
 
-    protected $fillable = ['image'];
+    protected $fillable = ['price', 'image','brand_name','brand_link','delivery_fees','animal_skin_category_id'];
 
     public $translatedAttributes = ['name','title', 'description'];
+
 
     public function getImageAttribute($image)
     {
@@ -21,13 +22,7 @@ class AnimalSkinCategory extends Model
 
     public function images()
     {
-        return $this->hasMany(AnimalSkinCategoryImage::class,'animal_skin_category_id');
+        return $this->hasMany(ProductImage::class,'product_id');
     }
 
-    public function deleteImage()
-    {
-        if(\File::exists($this->getRawOriginal('image'))) {
-            \File::delete($this->getRawOriginal('image'));
-        }
-    }
 }

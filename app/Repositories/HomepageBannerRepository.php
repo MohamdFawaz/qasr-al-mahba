@@ -44,14 +44,13 @@ class HomepageBannerRepository extends Repository
     {
         $banner = $this->model::query()->find($id);
 
-        $imageName = '';
 
         if ($updatedBanner->image) {
             $imageName = time() . '.' . $updatedBanner->image->extension();
             $updatedBanner->image->move(public_path('images/banners'), $imageName);
+            $banner->image = 'images/banners/' . $imageName;
         }
 
-        $banner->image = 'images/banners/' . $imageName;
 
         foreach ($updatedBanner->title as $locale => $value) {
             $banner->translateOrNew($locale)->title = $value;

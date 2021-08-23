@@ -2,13 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\AnimalSkinCategoryRepository;
+use App\Models\ProductImage;
+use App\Repositories\ProductRepository;
 
-class AnimalSkinCategoryService
+class ProductService
 {
     private $repository;
 
-    public function __construct(AnimalSkinCategoryRepository $repository)
+    public function __construct(ProductRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -18,6 +19,11 @@ class AnimalSkinCategoryService
         return $this->repository->query()->get($cols);
     }
 
+    public function getByCategoryId($categoryId)
+    {
+        return $this->repository->query()->where('animal_skin_category_id', $categoryId)->get();
+    }
+
     public function store($data)
     {
         return $this->repository->store($data);
@@ -25,7 +31,7 @@ class AnimalSkinCategoryService
 
     public function find($id)
     {
-        return $this->repository->query()->with('images')->find($id);
+        return $this->repository->find($id);
     }
 
     public function update($data, $id)
@@ -36,6 +42,11 @@ class AnimalSkinCategoryService
     public function destroy($id)
     {
         return $this->repository->destroy($id);
+    }
+
+    public function deleteImage($id)
+    {
+        ProductImage::query()->where('id',$id)->delete();
     }
 
 }

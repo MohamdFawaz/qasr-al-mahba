@@ -1,7 +1,8 @@
 @extends('admin.layouts.app')
 @section('css')
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 @endsection
 @section('content')
     <div id="main">
@@ -15,13 +16,13 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Create Animal Skin Category</h3>
+                        <h3>Create Product</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Animal Skin Category</li>
+                                <li class="breadcrumb-item active" aria-current="page">Product</li>
                             </ol>
                         </nav>
                     </div>
@@ -31,17 +32,66 @@
             <section id="basic-vertical-layouts">
                 <div class="col-md-12">
                     <form class="form form-vertical" method="post"
-                          action="{{route('animal-skin-category.store')}}"
+                          action="{{route('product.store')}}"
                           enctype="multipart/form-data">
                         @csrf
                         @method('post')
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title">Animal Skin Category</h5>
+                                <h5 class="card-title">Product</h5>
                             </div>
                             <div class="card-body">
                                 <div class="form-body">
+
                                     <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="animal_skin_category_id">Animal Skin Category</label>
+                                                <div class="form-group">
+                                                    <select class="form-select"
+                                                            name="animal_skin_category_id" id="animal_skin_category_id"
+                                                            required>
+                                                        <option>-- Select Category --</option>
+                                                        @foreach($categories as $category)
+                                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="price">Price</label>
+                                                <input type="number" id="price"
+                                                       class="form-control"
+                                                       name="price" placeholder="Product Price" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="delivery_fees">Price</label>
+                                                <input type="number" id="delivery_fees"
+                                                       class="form-control"
+                                                       name="delivery_fees" placeholder="Delivery Fees" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="brand_name">Brand Name</label>
+                                                <input type="text" id="brand_name"
+                                                       class="form-control"
+                                                       name="brand_name" placeholder="Brand Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="brand_link">Brand Link</label>
+                                                <input type="text" id="brand_link"
+                                                       class="form-control"
+                                                       name="brand_link" placeholder="Brand Link" required>
+                                            </div>
+                                        </div>
+
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="image" class="form-label">Image</label>
@@ -76,7 +126,7 @@
                                                                 <input type="text" id="title-{{$locale}}"
                                                                        class="form-control"
                                                                        name="title[{{$locale}}]"
-                                                                       placeholder="{{ucwords($locale)}} Animal Skin Category Title"
+                                                                       placeholder="{{ucwords($locale)}} Product Title"
                                                                        required>
                                                             </div>
                                                         </div>
@@ -86,7 +136,7 @@
                                                                 <input type="text" id="name-{{$locale}}"
                                                                        class="form-control"
                                                                        name="name[{{$locale}}]"
-                                                                       placeholder="{{ucwords($locale)}} Animal Skin Category Name"
+                                                                       placeholder="{{ucwords($locale)}} Product Name"
                                                                        required>
                                                             </div>
                                                         </div>
@@ -96,7 +146,7 @@
                                                                 <textarea class="form-control"
                                                                           id="description-{{$locale}}"
                                                                           name="description[{{$locale}}]"
-                                                                          placeholder="{{ucwords($locale)}} Animal Skin Category Description"
+                                                                          placeholder="{{ucwords($locale)}} Product Description"
                                                                           rows="3"></textarea>
                                                             </div>
                                                         </div>
@@ -108,7 +158,7 @@
                                 </div>
                             </div>
                             <div class="divider">
-                                <div class="divider-text">Category Images</div>
+                                <div class="divider-text">Product Images</div>
                             </div>
                             <div class="col-12 col-md-12">
                                 <div class="card">
@@ -118,7 +168,8 @@
                                     <div class="card-content">
                                         <div class="card-body">
                                             <!-- File uploader with multiple files upload -->
-                                            <input type="file" name="category_images[]" class="multiple-files-filepond" multiple>
+                                            <input type="file" name="product_images[]" class="multiple-files-filepond"
+                                                   multiple>
                                         </div>
                                     </div>
                                 </div>
@@ -150,8 +201,10 @@
 
 
     <!-- filepond validation -->
-    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script
+        src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script
+        src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
 
     <!-- filepond -->
@@ -166,7 +219,6 @@
             FilePondPluginFileValidateType,
             // preview the image file type...
             FilePondPluginImagePreview,
-
         );
 
         // Filepond: Multiple Files
