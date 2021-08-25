@@ -123,7 +123,7 @@
                arrows: false,
                pauseOnHover: false,
                autoplaySpeed: 2000,
-               slidesToShow: 3,
+               slidesToShow: 2,
                slidesToScroll: 1,
                responsive: [
                    {

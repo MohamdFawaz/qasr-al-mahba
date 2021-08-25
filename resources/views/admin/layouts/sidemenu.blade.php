@@ -62,6 +62,13 @@
                         <span>Product</span>
                     </a>
                 </li>
+                <li class="sidebar-item @if(Request::segment(2) == 'mining-process') active @endif" >
+                    <a href="{{route('mining-process.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Mining Process</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item">
                     <a href="{{url('/translations')}}" class='sidebar-link'>
                         <i class="bi bi-wrench"></i>

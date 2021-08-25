@@ -18,7 +18,7 @@
 <!--====================================================================
             Start Page Banner Section
         =====================================================================-->
-    <section class="animal-skin-page-banner overlay">
+    <section class="animal-skin-page-banner overlay" style="background: url({{asset('images/top-view-vintage-telephone-receivers-with-cord.jpg')}}); background-size: cover">
         <div class="container">
             <div class="banner-inner">
                 <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">

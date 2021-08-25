@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AnimalSkinCategoryController;
 use App\Http\Controllers\Admin\HomepageBannerController;
 use App\Http\Controllers\Admin\MiningLicenseCodeController;
+use App\Http\Controllers\Admin\MiningProcessController;
 use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\VideoLinkController;
@@ -67,6 +68,16 @@ Route::group(['prefix' => "admin"], function (){
         Route::get('/edit/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'edit'])->name('mining-resource.edit');
         Route::put('/update/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'update'])->name('mining-resource.update');
         Route::delete('/delete/{id}',[\App\Http\Controllers\Admin\MiningResourceController::class, 'destroy'])->name('mining-resource.delete');
+    });
+
+    Route::group(['prefix' => 'mining-process'],function () {
+        Route::get('/',[MiningProcessController::class, 'index'])->name('mining-process.index');
+        Route::get('/create',[MiningProcessController::class, 'create'])->name('mining-process.create');
+        Route::post('/',[MiningProcessController::class, 'store'])->name('mining-process.store');
+        Route::get('/edit/{id}',[MiningProcessController::class, 'edit'])->name('mining-process.edit');
+        Route::put('/update/{id}',[MiningProcessController::class, 'update'])->name('mining-process.update');
+        Route::delete('/delete/{id}',[MiningProcessController::class, 'destroy'])->name('mining-process.delete');
+        Route::delete('/delete-image/{id}',[MiningProcessController::class, 'deleteImage'])->name('mining-process.delete-image');
     });
 
     Route::group(['prefix' => 'animal-skin-category'],function () {
