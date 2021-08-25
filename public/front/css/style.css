@@ -451,8 +451,17 @@ input[type="submit"]:focus {
     display: flex;
     align-items: center;
 }
+.mining-process-page-banner {
+    height: 520px;
+    margin-top: 50px;
+    background: url(../../images/mining_process_cover.jpeg);
+    background-size: cover;
+    background-position: inherit;
+    display: flex;
+    align-items: center;
+}
 
-.page-banner.overlay:after, .mining-page-banner.overlay:after, .animal-skin-page-banner.overlay:after {
+.page-banner.overlay:after, .mining-page-banner.overlay:after, .animal-skin-page-banner.overlay:after, .mining-process-page-banner.overlay:after {
     position: absolute;
     content: '';
     top: 0;
@@ -463,12 +472,12 @@ input[type="submit"]:focus {
     clip-path: polygon(calc(100% - 320px) 0, 100% 100%, 0 100%, 0 0);
 }
 
-.page-banner .banner-inner, .mining-page-banner .banner-inner, .animal-skin-page-banner .banner-inner {
+.page-banner .banner-inner, .mining-page-banner .banner-inner, .animal-skin-page-banner .banner-inner, .mining-process-page-banner .banner-inner {
     padding: 160px 0 50px;
     text-align: center;
 }
 
-.page-banner .banner-inner h2, .mining-page-banner .banner-inner h2, .animal-skin-page-banner .banner-inner h2 {
+.page-banner .banner-inner h2, .mining-page-banner .banner-inner h2, .animal-skin-page-banner .banner-inner h2, .mining-process-page-banner .banner-inner h2 {
     color: #ffffff;
     font-size: 75px;
     line-height: 1.1;

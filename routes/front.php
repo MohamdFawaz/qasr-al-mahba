@@ -21,7 +21,10 @@ Route::get('/', [HomeController::class, 'home']);
 Route::get('/mining-license', [MiningController::class, 'index'])->name('mining-license');
 Route::get('/mining-license-code-details/{code}', [MiningController::class, 'getMiningLicenseCodeDetails'])->name('mining-license-codes');
 
-
+Route::group(['prefix' => 'mining-process'], function (){
+    Route::get('/',[MiningController::class, 'miningProcess'])->name('mining-process');
+    Route::get('/{id}',[MiningController::class, 'show'])->name('show-mining-process');
+});
 Route::get('/animal-skin', [AnimalSkinController::class, 'index'])->name('animal-skin');
 
 Route::get('/animal-skin/{id}', [AnimalSkinController::class, 'show'])->name('show-animal-skin');

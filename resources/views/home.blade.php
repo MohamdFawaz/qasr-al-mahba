@@ -58,11 +58,11 @@
                     <div class="col-xl-4 col-lg-4 col-md-4">
                         <div class="success-item">
                             <div class="success-content">
-                                <span class="count-text">{{trans('web.home.game_skin_title')}}</span>
-                                <p>{{trans('web.home.game_skin_content')}}</p>
+                                <span class="count-text">{{trans('web.home.mining_process_title')}}</span>
+                                <p>{{trans('web.home.mining_process_content')}}</p>
                             </div>
                         </div>
-                        <a href="{{route('animal-skin')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
+                        <a href="{{route('mining-process')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
                             {{trans('web.home.read_more')}} <i class="fas fa-arrow-right"></i>
                         </a>
