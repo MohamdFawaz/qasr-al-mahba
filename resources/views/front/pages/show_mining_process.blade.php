@@ -83,7 +83,7 @@
         Start Product Section
     =====================================================================-->
 
-    @if(false)
+    @if($process->products->count())
     <section class="products-slider mb-50">
         <h2 class="titillium-font text-center"
             style="color: #18395f;">{{$process->name}} {{trans('web.show_mining_process.famous_products')}}</h2>
@@ -94,23 +94,23 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <div class="row category-products-wrapper">
-                                @foreach($products as $product)
-                                    @if($product->link)
+                                @foreach($process->products as $product)
+                                    @if($product->product->link)
                                         <a href="#">
                                             @endif
                                             <div class="col">
                                                 <div class="tcb-product-item">
                                                     <div class="tcb-product-photo">
-                                                        <img src="{{$product->image}}" class="img-responsive" alt="a"/>
+                                                        <img src="{{$product->product->image}}" class="img-responsive" alt="a"/>
                                                     </div>
                                                     <div class="tcb-product-info">
                                                         <div class="tcb-product-title">
-                                                            <h4>{{$product->name}}</h4>
+                                                            <h4>{{$product->product->name}}</h4>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @if($product->link)
+                                            @if($product->product->link)
                                         </a>
                                     @endif
                                 @endforeach

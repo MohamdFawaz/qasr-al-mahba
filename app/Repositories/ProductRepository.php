@@ -3,7 +3,10 @@
 namespace App\Repositories;
 
 
+use App\Models\AnimalSkinCategory;
+use App\Models\MiningProcess;
 use App\Models\Product;
+use App\Models\Productable;
 
 class ProductRepository extends Repository
 {
@@ -29,7 +32,6 @@ class ProductRepository extends Repository
             $newProduct->image->move(public_path('images/product'), $imageName);
         }
 
-        $product->animal_skin_category_id = $newProduct->animal_skin_category_id;
         $product->link = $newProduct->link;
 
         $product->image = isset($imageName) ? 'images/product/' . $imageName : null;
@@ -40,6 +42,19 @@ class ProductRepository extends Repository
 
 
         $product->save();
+        if ($newProduct->type == 'mining_process') {
+            Productable::query()->create([
+                'product_id' => $product->id,
+                'productable_type' => MiningProcess::class,
+                'productable_id' => $newProduct->productable_id
+            ]);
+        }else{
+            Productable::query()->create([
+                'product_id' => $product->id,
+                'productable_type' => AnimalSkinCategory::class,
+                'productable_id' => $newProduct->productable_id
+            ]);
+        }
         return $product;
 
     }
@@ -59,7 +74,6 @@ class ProductRepository extends Repository
             $product->deleteImage();
         }
 
-        $product->animal_skin_category_id = $newProduct->animal_skin_category_id;
         $product->link = $newProduct->link;
 
         foreach ($newProduct->name as $locale => $value) {
@@ -67,8 +81,26 @@ class ProductRepository extends Repository
         }
 
         $product->save();
-
+        //todo only update in case of change
+        $this->flushProductableById($id);
+        if ($newProduct->type == 'mining_process') {
+            Productable::query()->create([
+                'product_id' => $product->id,
+                'productable_type' => MiningProcess::class,
+                'productable_id' => $newProduct->productable_id
+            ]);
+        }else{
+            Productable::query()->create([
+                'product_id' => $product->id,
+                'productable_type' => AnimalSkinCategory::class,
+                'productable_id' => $newProduct->productable_id
+            ]);
+        }
         return $product;
     }
 
+    private function flushProductableById($id)
+    {
+        Productable::query()->where('product_id',$id)->delete();
+    }
 }

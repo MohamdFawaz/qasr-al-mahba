@@ -41,16 +41,26 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="mb-3">
-                                                <label for="animal_skin_category_id">Animal Skin Category</label>
+                                                <label for="type">Select Type </label>
                                                 <div class="form-group">
                                                     <select class="form-select"
-                                                            name="animal_skin_category_id" id="animal_skin_category_id"
+                                                            name="type" id="type"
+                                                            required onchange="getRelatedTypeOptions()">
+                                                        <option>-- Select Type --</option>
+                                                        <option value="animal_skin_category" @if($product->animalSkinCategories->count()) selected @endif>Animal Skin Category
+                                                        </option>
+                                                        <option value="mining_process" @if($product->miningProcesses->count()) selected @endif>Mining Process</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" id="related-options-wrapper" style="display: none">
+                                            <div class="mb-3">
+                                                <label for="related-options">Select Option</label>
+                                                <div class="form-group">
+                                                    <select class="form-select"
+                                                            name="productable_id" id="related-options"
                                                             required>
-                                                        <option>-- Select Category --</option>
-                                                        @foreach($categories as $category)
-                                                            <option value="{{$category->id}}"
-                                                                    @if($category->id == $product->animal_skin_category_id) selected @endif>{{$category->name}}</option>
-                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -142,6 +152,7 @@
 
 <!-- filepond -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     // register desired plugins...
@@ -164,6 +175,23 @@
         storeAsFile: true,
         acceptedFileTypes: ['image/*'],
 
+    });
+    getRelatedTypeOptions = () => {
+        const parentSelectEl = $('#type');
+        const relatedWrapperEl = $('#related-options-wrapper');
+        const relatedEl = $('#related-options');
+        relatedEl.empty();
+        if (parentSelectEl.val()) {
+            axios.get('/admin/product/related-options/' + parentSelectEl.val()).then(response => {
+                for (let i = 0; i < response.data.length; i++) {
+                    relatedEl.append(new Option(response.data[i].name, response.data[i].id))
+                }
+                relatedWrapperEl.css('display', 'block');
+            }, err => console.error(err));
+        }
+    }
+    $(document).ready(function() {
+        getRelatedTypeOptions();
     });
 
 </script>
