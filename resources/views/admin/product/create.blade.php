@@ -46,15 +46,26 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="mb-3">
-                                                <label for="animal_skin_category_id">Animal Skin Category</label>
+                                                <label for="type">Select Type </label>
                                                 <div class="form-group">
                                                     <select class="form-select"
-                                                            name="animal_skin_category_id" id="animal_skin_category_id"
+                                                            name="type" id="type"
+                                                            required onchange="getRelatedTypeOptions(this)">
+                                                        <option>-- Select Type --</option>
+                                                        <option value="animal_skin_category">Animal Skin Category
+                                                        </option>
+                                                        <option value="mining_process">Mining Process</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" id="related-options-wrapper" style="display: none">
+                                            <div class="mb-3">
+                                                <label for="related-options">Select Option</label>
+                                                <div class="form-group">
+                                                    <select class="form-select"
+                                                            name="productable_id" id="related-options"
                                                             required>
-                                                        <option>-- Select Category --</option>
-                                                        @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -137,6 +148,7 @@
     <script src="{{asset('vendors/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendors/choices.js/choices.min.js')}}"></script>
     <script src="{{asset('js/pages/form-element-select.js')}}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
     <!-- filepond validation -->
@@ -170,6 +182,18 @@
             acceptedFileTypes: ['image/*'],
 
         });
-
+        getRelatedTypeOptions = (e) => {
+            const relatedWrapperEl = $('#related-options-wrapper');
+            const relatedEl = $('#related-options');
+            relatedEl.empty();
+            axios.get('/admin/product/related-options/' + e.value).then(response => {
+                console.log(response);
+                for (let i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i]);
+                    relatedEl.append(new Option(response.data[i].name, response.data[i].id))
+                }
+                relatedWrapperEl.css('display','block');
+            }, err => console.error(err))
+        }
     </script>
 @endsection

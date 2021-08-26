@@ -32,7 +32,7 @@ class MiningProcessService
 
     public function find($id)
     {
-        return $this->repository->find($id);
+        return $this->repository->with(['products','products.product'])->find($id);
     }
 
     public function update($date, $id)

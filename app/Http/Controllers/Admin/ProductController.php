@@ -5,17 +5,19 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AnimalSkinCategory;
 use App\Services\AnimalSkinCategoryService;
+use App\Services\MiningProcessService;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    private $service, $animalSkinCategoryService;
+    private $service, $animalSkinCategoryService, $miningProcessService;
 
-    public function __construct(ProductService $service, AnimalSkinCategoryService $animalSkinCategoryService)
+    public function __construct(ProductService $service, AnimalSkinCategoryService $animalSkinCategoryService, MiningProcessService $miningProcessService)
     {
         $this->service = $service;
         $this->animalSkinCategoryService = $animalSkinCategoryService;
+        $this->miningProcessService = $miningProcessService;
     }
 
     /**
@@ -34,8 +36,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = $this->animalSkinCategoryService->get();
-        return view('admin.product.create', compact('categories'));
+        return view('admin.product.create');
     }
 
     /**
@@ -69,8 +70,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = $this->service->find($id);
-        $categories = $this->animalSkinCategoryService->get();
-        return view('admin.product.edit', compact('product', 'categories'));
+        return view('admin.product.edit', compact('product'));
     }
 
     /**
@@ -104,5 +104,15 @@ class ProductController extends Controller
             reportException($e);
             return response()->json('Something went wrong');
         }
+    }
+
+    public function getRelatedOptions($type)
+    {
+        if ($type == 'mining_process') {
+            $options = $this->miningProcessService->get();
+        } else {
+            $options = $this->animalSkinCategoryService->get();
+        }
+        return response()->json($options);
     }
 }

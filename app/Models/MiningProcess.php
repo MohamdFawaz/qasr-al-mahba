@@ -12,6 +12,14 @@ class MiningProcess extends Model
 
     public $translatedAttributes = ['name','title', 'description'];
 
+    /**
+     * Get all of the process's products.
+     */
+    public function products()
+    {
+        return $this->morphMany(Productable::class, 'productable');
+    }
+
     public function getImageAttribute($image)
     {
         return asset($image);

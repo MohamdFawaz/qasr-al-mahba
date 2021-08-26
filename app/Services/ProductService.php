@@ -31,7 +31,7 @@ class ProductService
 
     public function find($id)
     {
-        return $this->repository->find($id);
+        return $this->repository->query()->with(['animalSkinCategories','miningProcesses'])->find($id);
     }
 
     public function update($data, $id)

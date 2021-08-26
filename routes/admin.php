@@ -97,5 +97,7 @@ Route::group(['prefix' => "admin"], function (){
         Route::put('/update/{id}',[ProductController::class, 'update'])->name('product.update');
         Route::delete('/delete/{id}',[ProductController::class, 'destroy'])->name('product.delete');
         Route::delete('/delete/image/{id}',[ProductController::class, 'deleteProductImage'])->name('product-image.delete');
+
+        Route::get('/related-options/{type}',[ProductController::class, 'getRelatedOptions'])->name('product.get-related-options');
     });
 });

@@ -49,54 +49,13 @@
     <section class="case-details pt-150 rpt-100">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="{{asset('images/African-Gameskin-Showroom-Display-Leathers-2048x1152.jpg')}}"
-                         class="img-fluid " style="width: 300px"
-                         alt="mining-page-side-image">
-                    <div class="case-sidebar">
-                        <div class="sidebar-widget information-widget bg-snow">
-                            <div class="row">
-                                <img src="{{asset('images/pie-chart.svg')}}" class="img-fluid w-25 col-3"
-                                     alt="pie-chart-img">
-                                <div class="col-9">
-                                    <span
-                                        class="font-weight-bold">{{trans('web.page.mining_process.natural_title')}}</span>
-                                    <p>
-                                        {{trans('web.page.mining_process.natural_desc')}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <img src="{{asset('images/keys.svg')}}" class="img-fluid w-25 col-3" alt="keys-img">
-                                <div class="col-9">
-                                    <span
-                                        class="font-weight-bold">{{trans('web.page.mining_process.high_quality_title')}}</span>
-                                    <p>
-                                        {{trans('web.page.mining_process.high_quality_desc')}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <img src="{{asset('images/mobile-phone.svg')}}" class="img-fluid w-25 col-3"
-                                     alt="mobile-phone-img">
-                                <div class="col-9">
-                                    <span
-                                        class="font-weight-bold">{{trans('web.page.mining_process.contact_us_title')}}</span>
-                                    <p>
-                                        {{trans('web.page.mining_process.contact_us_desc')}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="case-details-content">
+                <div class="col-lg-12">
+                    <div class="case-details-content text-center">
                         <div class="section-title">
                             <h2>{{trans('web.page.mining_process.content_title')}}</h2>
                         </div>
                         <img src="{{asset('images/flag.png')}}" class="img-fluid">
-                        <p>{{trans('web.page.mining_process.content_description')}}</p>
+                        <p class="text-center">{{trans('web.page.mining_process.content_description')}}</p>
                     </div>
                 </div>
             </div>
