@@ -10,11 +10,25 @@ class Product extends Model
 {
     use HasFactory, Translatable;
 
-    protected $fillable = ['image','animal_skin_category_id'];
+    protected $fillable = ['image'];
 
     public $translatedAttributes = ['name'];
 
+    /**
+     * Get all of the AnimalSkinCategory that are assigned this product.
+     */
+    public function animalSkinCategories()
+    {
+        return $this->morphedByMany(AnimalSkinCategory::class, 'productable');
+    }
 
+    /**
+     * Get all of the MiningProcess that are assigned this product.
+     */
+    public function miningProcesses()
+    {
+        return $this->morphedByMany(MiningProcess::class, 'productable');
+    }
 
     public function getImageAttribute($image)
     {
