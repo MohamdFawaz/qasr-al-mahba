@@ -34,7 +34,7 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{route('mining-resource.create')}}" class="btn btn-primary ">Create</a>
+                        <a href="{{route('article.create')}}" class="btn btn-primary ">Create</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped" id="table1">
