@@ -24,7 +24,7 @@ class CreateArticlesTable extends Migration
             $table->bigInteger('article_id')->unsigned();
             $table->string('locale')->index();
             $table->string('title');
-            $table->text('content');
+            $table->longText('content');
             $table->unique(['article_id','locale']);
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
         });
@@ -37,7 +37,7 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
         Schema::dropIfExists('article_translations');
+        Schema::dropIfExists('articles');
     }
 }

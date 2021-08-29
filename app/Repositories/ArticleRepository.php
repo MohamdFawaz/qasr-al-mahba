@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 
 use App\Models\Article;
-use App\Models\MiningResource;
 
 class ArticleRepository extends Repository
 {
@@ -52,9 +51,5 @@ class ArticleRepository extends Repository
         $article->save();
         return $article;
 
-    }
-    public function destroy($id)
-    {
-        $resource = $this->destroy($id);
     }
 }
