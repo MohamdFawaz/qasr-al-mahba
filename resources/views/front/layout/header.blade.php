@@ -34,8 +34,13 @@
                             <ul class="navigation clearfix">
                                 <li class="current-menu-item"><a href="{{url('/')}}">{{trans('web.header.home')}}</a>
                                 </li>
-                                <li><a href="{{url('/')}}">{{trans('web.header.services')}}</a></li>
-                                <li><a href="{{url('/')}}">{{trans('web.header.product')}} </a></li>
+                                <li class="dropdown"><a href="javascript:void">{{trans('web.header.services')}}</a>
+                                    <ul>
+                                        <li><a href="{{route('mining-license')}}">{{trans('web.header.mining_license')}}</a></li>
+                                        <li><a href="{{route('mining-process')}}">{{trans('web.header.mining_process')}}</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void">{{trans('web.header.product')}} </a></li>
                                 <li><a href="{{route('contact')}}">{{trans('web.header.contact')}} </a></li>
                                 <li><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
                             </ul>
