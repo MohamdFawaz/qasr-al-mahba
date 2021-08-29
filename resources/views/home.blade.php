@@ -157,7 +157,7 @@
         @foreach($articles as $article)
             <div class="row">
                 <div class="col-12">
-                    <h4>{{$article->title}}</h4>
+                    <h3>{{$article->title}}</h3>
                     <div class="ql-editor">
                         {!! $article->content !!}
                     </div>
