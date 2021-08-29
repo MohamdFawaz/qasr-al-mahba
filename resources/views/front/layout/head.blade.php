@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{app()->getLocale()}}">
 <head>
+    <div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -18,10 +19,10 @@
     <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/leaflet.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/spacing.min.css')}}">
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/style.min.css?v=1.13')}}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.13')}}">
     @yield('css')
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 </head>

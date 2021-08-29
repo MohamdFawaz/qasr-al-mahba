@@ -2765,3 +2765,4 @@ input[type="submit"]:focus {
 .follow-us-section .rounded-social-buttons {
     float: right;
 }
+#loadOverlay{display: none;}
