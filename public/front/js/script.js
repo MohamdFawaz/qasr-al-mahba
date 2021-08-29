@@ -375,6 +375,7 @@
         function handlePreloader() {
             if ($('.preloader').length) {
                 $('.preloader').delay(200).fadeOut(500);
+                $("html").css("display", "block").fadeIn();
             }
         }
         handlePreloader();

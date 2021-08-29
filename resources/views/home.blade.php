@@ -11,10 +11,6 @@
 
 <div class="page-wrapper">
 @include('front.layout.header')
-
-<!--====================================================================
-        Start Hero Section
-    =====================================================================-->
     <div class="homepage-banner">
         @foreach($banners as $banner)
             <section class="hero-section overlay" style="background: url({{$banner->image}}); background-size: cover;">
@@ -33,13 +29,6 @@
             </section>
         @endforeach
     </div>
-    <!--====================================================================
-        End Hero Section
-    =====================================================================-->
-
-    <!--====================================================================
-        Start Our Success Section
-    =====================================================================-->
     <div class="our-success pb-30 rpb-0 wow fadeInUp" data-wow-duration="2s">
         <div class="container">
             <div class="success-wrap bg-blue">
@@ -84,14 +73,6 @@
             </div>
         </div>
     </div>
-    <!--====================================================================
-        End Our Success Section
-    =====================================================================-->
-
-
-    <!--====================================================================
-        Start Video Section
-    =====================================================================-->
     <section class="video-section bg-snow pt-140 rpt-90 pb-110 rpb-60">
         <div class="container">
             <div class="row">
@@ -113,21 +94,7 @@
             </div>
         </div>
     </section>
-    <!--====================================================================
-        End Video Section
-    =====================================================================-->
-
-
-    <!--====================================================================
-        Star Partners Section
-    =====================================================================-->
 @include('front.partners')
-<!--====================================================================
-        End Partners Section
-    =====================================================================-->
-    <!--====================================================================
-        Star investing Section
-    =====================================================================-->
     <section class="investing-section pt-135 rpt-85 pb-145 rpb-130">
         <div class="container" style="position: relative">
             <div class="row">
@@ -144,13 +111,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!--====================================================================
-        End investing Section
-    =====================================================================-->
-
     <section class="investing-section pt-135 rpt-85 pb-145 rpb-130">
         <div class="container" style="position: relative">
             <h2 class="text-center">{{trans('web.home.articles')}}</h2>
@@ -166,27 +128,17 @@
             @endforeach
         </div>
     </section>
-    <!--====================================================================
-        Start Call Back Section
-    =====================================================================-->
-
     <section class="contact-us mb-100">
         <div class="container">
             <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>
-    <!--====================================================================
-        End Call Back Section
-    =====================================================================-->
-
-
 </div>
 @include('front.layout.footer')
 <!--End pagewrapper-->
 @section('js')
     <script>
-        // YouTube sintaxis for embedded videos and images
 
         const links = JSON.parse(`@json($links)`);
         let arrVideos = [];
@@ -194,16 +146,12 @@
         const ytImagePathPrefix = `https://i.ytimg.com/vi/`
         const ytImagePathSufix = `/maxresdefault.jpg`
 
-        // Array of Videos
         for (var i = 0; i < links.length; i++) {
             arrVideos.push({data: links[i].link});
         }
-        // Current video
-
         let currentVideo = document.getElementById('current-video')
         currentVideo.src = `${ytVideoPrefix}${arrVideos[0].data}`
 
-        // Add .gallery__items to .gallery
 
         let gallery = document.querySelector('.gallery')
         gallery.innerHTML = ``
@@ -215,9 +163,6 @@
             data="${arrVideos[i].data}">
             </div>`
         }
-        // <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
-
-        // Add event listeners
 
         gallery.addEventListener('click', (e) => {
             // When click on .gallery__item element
