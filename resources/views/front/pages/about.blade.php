@@ -30,7 +30,7 @@
                 </nav>
                 <h2 class="text-center wow fadeInUp"
                     data-wow-duration="1.5s">{{trans('web.pages.about.about_us_title')}}</h2>
-                <a href="{{url('/')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
+                <a href="{{route('contact')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
                    data-wow-delay="1s">
                     {{trans('web.home.banner.contact_us')}} <i class="fas fa-arrow-right"></i>
                 </a>
@@ -89,9 +89,11 @@
                                 {{trans('web.page.about.integrity_content')}}
                             </p>
                         </div>
-                        <div class="tiles-section-holder">
-                            <i class="fa fa-greater-than"></i>
-                        </div>
+                        <a href="{{trans('web.page.about.integrity_link')}}">
+                            <div class="tiles-section-holder">
+                                <i class="fa fa-greater-than"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -102,9 +104,11 @@
                                 {{trans('web.page.about.automation_content')}}
                             </p>
                         </div>
-                        <div class="tiles-section-holder">
-                            <i class="fa fa-greater-than"></i>
-                        </div>
+                        <a href="{{trans('web.page.about.automation_link')}}">
+                            <div class="tiles-section-holder">
+                                <i class="fa fa-greater-than"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -115,9 +119,11 @@
                                 {{trans('web.page.about.tradition_content')}}
                             </p>
                         </div>
-                        <div class="tiles-section-holder">
-                            <i class="fa fa-greater-than"></i>
-                        </div>
+                        <a href="{{trans('web.page.about.tradition_link')}}">
+                            <div class="tiles-section-holder">
+                                <i class="fa fa-greater-than"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -128,9 +134,11 @@
                                 {{trans('web.page.about.safety_content')}}
                             </p>
                         </div>
-                        <div class="tiles-section-holder">
-                            <i class="fa fa-greater-than"></i>
-                        </div>
+                        <a href="{{trans('web.page.about.safety_link')}}">
+                            <div class="tiles-section-holder">
+                                <i class="fa fa-greater-than"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
 

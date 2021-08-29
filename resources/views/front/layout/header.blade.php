@@ -32,17 +32,17 @@
 
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
-                                <li class="current-menu-item"><a href="{{url('/')}}">{{trans('web.header.home')}}</a>
+                                <li class="@if(!Request::segment(1)) current-menu-item @endif"><a href="{{url('/')}}">{{trans('web.header.home')}}</a>
                                 </li>
-                                <li class="dropdown"><a href="javascript:void">{{trans('web.header.services')}}</a>
+                                <li class="dropdown @if(Request::segment(1) == 'mining-license' || Request::segment(1) == 'mining-process') current-menu-item @endif"><a href="javascript:void">{{trans('web.header.services')}}</a>
                                     <ul>
                                         <li><a href="{{route('mining-license')}}">{{trans('web.header.mining_license')}}</a></li>
                                         <li><a href="{{route('mining-process')}}">{{trans('web.header.mining_process')}}</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="javascript:void">{{trans('web.header.product')}} </a></li>
-                                <li><a href="{{route('contact')}}">{{trans('web.header.contact')}} </a></li>
-                                <li><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
+                                <li class="@if(Request::segment(1) == 'contact-us') current-menu-item @endif"><a href="{{route('contact')}}">{{trans('web.header.contact')}} </a></li>
+                                <li class="@if(Request::segment(1) == 'about') current-menu-item @endif"><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
                             </ul>
                         </div>
 
@@ -60,5 +60,5 @@
     <!--End Header Upper-->
 </header>
 <!--====================================================================
-                        End Header area
+                        End Header area.menu-number i:before
 =====================================================================-->

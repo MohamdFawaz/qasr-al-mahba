@@ -30,7 +30,7 @@
                 </nav>
                 <h2 class="text-center wow fadeInUp"
                     data-wow-duration="1.5s">{{trans('web.page.title.mining_process')}}</h2>
-                <a href="{{url('/')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
+                <a href="{{route('contact')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
                    data-wow-delay="1s">
                     {{trans('web.home.banner.contact_us')}} <i class="fas fa-arrow-right"></i>
                 </a>
