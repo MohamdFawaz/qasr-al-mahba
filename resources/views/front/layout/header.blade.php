@@ -1,6 +1,4 @@
 <!-- Preloader -->
-<div class="preloader"></div>
-
 <header class="main-header">
     <!--Header-Upper-->
     <div class="header-upper">
