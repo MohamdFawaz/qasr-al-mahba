@@ -1,9 +1,6 @@
 <!-- Preloader -->
 <div class="preloader"></div>
 
-<!--====================================================================
-                        Start Header area
-=====================================================================-->
 <header class="main-header">
     <!--Header-Upper-->
     <div class="header-upper">
@@ -12,11 +9,6 @@
                 <a href="{{url('/')}}"><img src="{{asset('images/Footer_logo.png')}}" alt="header-image"></a>
             </div>
             <div class="header-inner d-lg-flex align-items-center">
-
-                <div class="logo-outer d-flex align-items-center">
-                    <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="" title=""></a></div>
-                </div>
-
                 <div class="nav-outer clearfix mr-lg-auto">
                     <!-- Main Menu -->
                     <nav class="main-menu navbar-expand-lg">
@@ -45,11 +37,8 @@
                                 <li class="@if(Request::segment(1) == 'about') current-menu-item @endif"><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
                             </ul>
                         </div>
-
                     </nav>
-                    <!-- Main Menu End-->
                 </div>
-
                 <div class="menu-number">
                     <a href="{{route('contact')}}"><i class="flaticon-edit"></i>{{trans('web.header.get_fair_quote')}}</a>
                 </div>
@@ -57,8 +46,5 @@
 
         </div>
     </div>
-    <!--End Header Upper-->
 </header>
-<!--====================================================================
-                        End Header area.menu-number i:before
-=====================================================================-->
+
