@@ -68,6 +68,12 @@
                         <span>Mining Process</span>
                     </a>
                 </li>
+                <li class="sidebar-item @if(Request::segment(2) == 'article') active @endif" >
+                    <a href="{{route('article.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Article</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item">
                     <a href="{{url('/translations')}}" class='sidebar-link'>

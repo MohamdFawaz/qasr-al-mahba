@@ -100,4 +100,14 @@ Route::group(['prefix' => "admin"], function (){
 
         Route::get('/related-options/{type}',[ProductController::class, 'getRelatedOptions'])->name('product.get-related-options');
     });
+
+    Route::group(['prefix' => 'article'],function () {
+        Route::get('/',[\App\Http\Controllers\Admin\ArticleController::class, 'index'])->name('article.index');
+        Route::get('/create',[\App\Http\Controllers\Admin\ArticleController::class, 'create'])->name('article.create');
+        Route::post('/',[\App\Http\Controllers\Admin\ArticleController::class, 'store'])->name('article.store');
+        Route::get('/edit/{id}',[\App\Http\Controllers\Admin\ArticleController::class, 'edit'])->name('article.edit');
+        Route::put('/update/{id}',[\App\Http\Controllers\Admin\ArticleController::class, 'update'])->name('article.update');
+        Route::delete('/delete/{id}',[\App\Http\Controllers\Admin\ArticleController::class, 'destroy'])->name('article.delete');
+    });
+
 });
