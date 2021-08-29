@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
 
-
+@section('content')
 <div class="page-wrapper">
 @include('front.layout.header')
 
@@ -225,41 +225,43 @@
     <!--====================================================================
         End Call Back Section
     =====================================================================-->
-    @section('js')
-
-        <script>
-
-            copyToClipboard = (e) => {
-                const code = $('#code-select').val();
-                var value = `<input value="${code}" id="selVal" />`;
-                $(value).insertAfter('#code-select');
-                $("#selVal").select();
-                document.execCommand("Copy");
-                $('body').find("#selVal").remove();
-                $('#redirection-section').css('display', 'block');
-            }
-            (function ($) {
-                $('#thumbcarousel').carousel(0);
-                var $thumbItems = $('#thumbcarousel .tcb-product-item');
-                $('#carousel').on('slide.bs.carousel', function (event) {
-                    var $slide = $(event.relatedTarget);
-                    var thumbIndex = $slide.data('thumb');
-                    var curThumbIndex = $thumbItems.index($thumbItems.filter('.active').get(0));
-                    if (curThumbIndex > thumbIndex) {
-                        $('#thumbcarousel').one('slid.bs.carousel', function (event) {
-                            $('#thumbcarousel').carousel(thumbIndex);
-                        });
-                        if (curThumbIndex === ($thumbItems.length - 1)) {
-                            $('#thumbcarousel').carousel('next');
-                        } else {
-                            $('#thumbcarousel').carousel(numThumbItems - 1);
-                        }
-                    } else {
-                        $('#thumbcarousel').carousel(thumbIndex);
-                    }
-                });
-            })(jQuery);
-        </script>
-    @endsection
     @include('front.layout.footer')
+    @endsection
 </div>
+@section('js')
+
+    <script>
+
+        copyToClipboard = (e) => {
+            const code = $('#code-select').val();
+            var value = `<input value="${code}" id="selVal" />`;
+            $(value).insertAfter('#code-select');
+            $("#selVal").select();
+            document.execCommand("Copy");
+            $('body').find("#selVal").remove();
+            $('#redirection-section').css('display', 'block');
+        }
+        (function ($) {
+            $('#thumbcarousel').carousel(0);
+            var $thumbItems = $('#thumbcarousel .tcb-product-item');
+            $('#carousel').on('slide.bs.carousel', function (event) {
+                var $slide = $(event.relatedTarget);
+                var thumbIndex = $slide.data('thumb');
+                var curThumbIndex = $thumbItems.index($thumbItems.filter('.active').get(0));
+                if (curThumbIndex > thumbIndex) {
+                    $('#thumbcarousel').one('slid.bs.carousel', function (event) {
+                        $('#thumbcarousel').carousel(thumbIndex);
+                    });
+                    if (curThumbIndex === ($thumbItems.length - 1)) {
+                        $('#thumbcarousel').carousel('next');
+                    } else {
+                        $('#thumbcarousel').carousel(numThumbItems - 1);
+                    }
+                } else {
+                    $('#thumbcarousel').carousel(thumbIndex);
+                }
+            });
+        })(jQuery);
+    </script>
+@endsection
+

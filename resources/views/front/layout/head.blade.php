@@ -21,10 +21,11 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/style.css?v=1.14')}}">
+    <link rel="stylesheet" href="{{asset('front/css/style.min.css?v=1.15')}}">
     @yield('css')
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 </head>
 
 <body>
+<div class="preloader"></div>
 <!-- Preloader -->

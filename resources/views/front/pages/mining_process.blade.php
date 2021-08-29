@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
 
-
+@section('content')
 <div class="page-wrapper">
 @include('front.layout.header')
 
@@ -99,20 +99,22 @@
     <!--====================================================================
         End Call Back Section
     =====================================================================-->
-    @section('js')
-        <script>
-
-            copyToClipboard = (e) => {
-                const code = $('#code-select').val();
-                var value = `<input value="${code}" id="selVal" />`;
-                $(value).insertAfter('#code-select');
-                $("#selVal").select();
-                document.execCommand("Copy");
-                $('body').find("#selVal").remove();
-                $('#redirection-section').css('display', 'block');
-            }
-
-        </script>
-    @endsection
     @include('front.layout.footer')
+    @endsection
 </div>
+@section('js')
+    <script>
+
+        copyToClipboard = (e) => {
+            const code = $('#code-select').val();
+            var value = `<input value="${code}" id="selVal" />`;
+            $(value).insertAfter('#code-select');
+            $("#selVal").select();
+            document.execCommand("Copy");
+            $('body').find("#selVal").remove();
+            $('#redirection-section').css('display', 'block');
+        }
+
+    </script>
+@endsection
+

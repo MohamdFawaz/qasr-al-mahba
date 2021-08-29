@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
 @endsection
 
-
+@section('content')
 <div class="page-wrapper">
 @include('front.layout.header')
 
@@ -142,3 +142,4 @@
     =====================================================================-->
     @include('front.layout.footer')
 </div>
+@endsection

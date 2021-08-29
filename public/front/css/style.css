@@ -355,7 +355,7 @@ input[type="submit"]:focus {
 .bt_bb_shape_circle.bt_bb_service .bt_bb_icon_holder {
     border-radius: 50%;
     font-size: 30px;
-    padding: 15px;
+    padding: 1px;
 }
 
 .bt_bb_service .bt_bb_icon_holder {
@@ -2765,4 +2765,3 @@ input[type="submit"]:focus {
 .follow-us-section .rounded-social-buttons {
     float: right;
 }
-#loadOverlay{display: none;}
