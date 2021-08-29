@@ -17,7 +17,7 @@
                     <ul>
                         <li><a href="{{route('mining-license')}}">{{trans('web.home.footer.mining_license')}}</a></li>
                         <li><a href="{{route('mining-process')}}">{{trans('web.home.footer.mining_process')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.new_product')}}</a></li>
+                        <li><a href="javascript:void">{{trans('web.home.footer.new_product')}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                 <div class="widget menu-widget">
                     <h3 class="widget-title">{{trans('web.home.footer.about_title')}}</h3>
                     <ul>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_1')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_2')}}</a></li>
-                        <li><a href="{{url('/')}}">{{trans('web.home.footer.about_link_title_3')}}</a></li>
+                        <li><a href="{{route('about')}}">{{trans('web.home.footer.about_link_title_1')}}</a></li>
+                        <li><a href="{{route('about')}}">{{trans('web.home.footer.about_link_title_2')}}</a></li>
+                        <li><a href="{{route('about')}}">{{trans('web.home.footer.about_link_title_3')}}</a></li>
                     </ul>
                 </div>
             </div>
