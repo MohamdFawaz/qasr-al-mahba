@@ -30,11 +30,6 @@
                 </nav>
                 <h2 class="text-center wow fadeInUp"
                     data-wow-duration="1.5s">{{trans('web.pages.about.contact_us_title')}}</h2>
-                <a href="{{url('/')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
-                   data-wow-delay="1s">
-                    {{trans('web.home.banner.contact_us')}} <i class="fas fa-arrow-right"></i>
-                </a>
-
             </div>
         </div>
     </section>
@@ -59,16 +54,62 @@
                             </p>
                         </div>
                         <ul>
-                            @foreach(\Carbon\Carbon::getDays() as $day)
                             <li class="row">
                                 <div class="col-6 text-left">
-                                    {{trans('web.page.contact.'.strtolower($day).'_name')}}
+                                    {{trans('web.page.contact.saturday_name')}}
                                 </div>
                                 <div class="col-6 text-center">
-                                    {{trans('web.page.contact.'.strtolower($day).'_time_range')}}
+                                    {{trans('web.page.contact.saturday_time_range')}}
                                 </div>
                             </li>
-                            @endforeach
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.sunday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.sunday_time_range')}}
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.monday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.monday_time_range')}}
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.tuesday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.tuesday_time_range')}}
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.wednesday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.wednesday_time_range')}}
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.thursday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.thursday_time_range')}}
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-6 text-left">
+                                    {{trans('web.page.contact.friday_name')}}
+                                </div>
+                                <div class="col-6 text-center">
+                                    {{trans('web.page.contact.friday_time_range')}}
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

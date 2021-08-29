@@ -23,7 +23,7 @@
                             <span class="wow fadeInUp" data-wow-duration="1s"
                                   data-wow-delay="0.3s">{{$banner->title}}</span><br>
                         </h1>
-                        <a href="{{url('/')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
+                        <a href="{{route('contact')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
                             {{trans('web.home.banner.contact_us')}} <i class="fas fa-arrow-right"></i>
                         </a>
@@ -74,7 +74,7 @@
                                 <p>{{trans('web.home.new_product_content')}}</p>
                             </div>
                         </div>
-                        <a href="{{url('/')}}" class="theme-btn wow fadeInUp" data-wow-duration="1s"
+                        <a href="javascript:void" class="theme-btn wow fadeInUp" data-wow-duration="1s"
                            data-wow-delay="1s">
                             {{trans('web.home.read_more')}} <i class="fas fa-arrow-right"></i>
                         </a>
@@ -87,64 +87,6 @@
         End Our Success Section
     =====================================================================-->
 
-    <!--====================================================================
-        Start About Us Section
-    =====================================================================-->
-    <section class="about-us pb-150 rpb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="rmb-50">
-                        <h2 class="bt_bb_headline_tag text-center" data-wow-duration="2s">
-                            <img src="{{asset('images/who_we_are.png')}}" style="width: 300px">
-                        </h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <p class="wow fadeInUp" data-wow-duration="2s">{{trans('web.home.who_we_are_content')}}</p>
-                        <div class="about-us-signature">
-                            <span>
-                              <img width="438" height="140"
-                                   src="{{asset('images/signature.png')}}"
-                                   alt="image-signature"
-                                   loading="lazy">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====================================================================
-        End About Us Section
-    =====================================================================-->
-    <section class="founders pb-150 rpb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <p class="wow fadeInUp" data-wow-duration="2s">{{trans('web.home.founders_content')}}</p>
-                        <div class="about-us-signature">
-                            <span>
-                              <img width="438" height="140"
-                                   src="{{asset('images/signature.png')}}"
-                                   alt="image-signature"
-                                   loading="lazy">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="rmb-50">
-                        <h2 class="bt_bb_headline_tag text-center" data-wow-duration="2s">
-                            <img src="{{asset('images/founders.png')}}" style="width: 450px">
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!--====================================================================
         Start Video Section

@@ -230,10 +230,11 @@
 
 .menu-number a {
     color: #fff !important;
+    font-size: 16px;
 }
 
 .menu-number {
-    width: 180px;
+    width: 165px;
     height: 35px;
     background: #18385f;
 }
@@ -247,7 +248,7 @@
 }
 
 .menu-number i:before {
-    font-size: 25px;
+    font-size: 22px;
 }
 
 @media only screen and (max-width: 1250px) {
