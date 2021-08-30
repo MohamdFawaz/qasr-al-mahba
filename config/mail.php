@@ -108,7 +108,8 @@ return [
     ],
 
     'to' => [
-        'address' => env('MAIL_TO_ADDRESS', 'info@qasralmahba.com')
+        'address' => env('MAIL_TO_ADDRESS', 'info@qasralmahba.com'),
+        'name' => 'Qasr Al Mahba',
     ],
 
 ];
