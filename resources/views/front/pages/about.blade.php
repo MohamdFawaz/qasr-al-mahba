@@ -216,7 +216,7 @@
     =====================================================================-->
     @include('front.partners')
 
-    <section class="contact-us mb-100 pt-150 rpt-100">
+    <section class="zero-padding-contact-us mb-100 pt-150 rpt-100">
         <div class="container">
             <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
