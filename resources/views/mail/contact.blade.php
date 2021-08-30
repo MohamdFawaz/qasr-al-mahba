@@ -3,9 +3,20 @@
 <head>
 </head>
 <body>
-<h1>{{ $details['title'] }}</h1>
-<p>{{ $details['body'] }}</p>
-
-<p>Thank you</p>
+<ul>
+    <li>
+        <h2>Name: {{ $details['name'] }}</h2>
+    </li>
+    <li>
+        <h2>Email: {{ $details['email'] }}</h2>
+    </li>
+    <li>
+        <h2>Phone: {{ $details['phone'] }}</h2>
+    </li>
+    <li>
+        <h2>Project Scope: {{ $details['project_scope'] }}</h2>
+    </li>
+    <p>Content: {{ $details['content'] }}</p>
+</ul>
 </body>
 </html>

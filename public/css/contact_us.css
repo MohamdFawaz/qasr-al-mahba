@@ -531,12 +531,15 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
     border-bottom: 1px solid #d9d9d9;
     border-radius: 0;
 }
+
 .contact-us-input::placeholder, .contact-us-textarea::placeholder {
     color: #000;
 }
+
 .contact-us-textarea {
     border: 1px solid #d9d9d9;
 }
+
 .bt_bb_service_content_title {
     color: #000;
     font-weight: 500;
@@ -589,3 +592,58 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
 .bt_bb_service_content {
     text-align: center;
 }
+
+.glow {
+    animation: glow 1s infinite
+}
+.success-message {
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 250ms;
+    color: #fff;
+    background: #28a745;
+    line-height: 52px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    display: none;
+}
+
+.success-message.shown {
+    opacity: 1;
+    z-index: 1;
+    display: block;
+}
+@keyframes glow {
+
+0,100%  {
+    color: #fff
+}
+50%{
+    color: #FDA543
+}
+}
+.error-message {
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 250ms;
+    color: #fff;
+    background: #F63D3A;
+    line-height: 52px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    display: none;
+}
+
+.error-message.shown {
+    opacity: 1;
+    z-index: 1;
+    display: block;
+}
+
+
