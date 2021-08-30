@@ -226,8 +226,8 @@
         End Call Back Section
     =====================================================================-->
     @include('front.layout.footer')
-    @endsection
 </div>
+@endsection
 @section('js')
 
     <script>
