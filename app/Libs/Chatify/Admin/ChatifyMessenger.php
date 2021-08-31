@@ -291,9 +291,9 @@ class ChatifyMessenger
      * @param int $user_id
      * @return boolean
      */
-    public function deleteConversation($user_id){
+    public static function deleteConversation($user_id){
         try {
-            foreach ($this->fetchMessagesQuery($user_id)->get() as $msg) {
+            foreach (app()->make(ChatifyMessenger::class)->fetchMessagesQuery($user_id)->get() as $msg) {
                 // delete file attached if exist
                 if (isset($msg->attachment)) {
                     $path = storage_path('app/public/'.config('chatify.attachments.folder').'/'.json_decode( $msg->attachment)->new_name);
