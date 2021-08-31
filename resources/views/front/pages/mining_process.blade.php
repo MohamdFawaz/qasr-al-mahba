@@ -71,11 +71,11 @@
                     <div class="thumbnails mb-30 mt-130">
                         <img src="{{asset('images/mining_precess.jpeg')}}" class="img-fluid w-100">
                         <div
-                            class="image-title titillium-font text-shadow-white">{{trans('web.page.mining_process.categories')}}</div>
+                            class="image-title available-resources titillium-font text-shadow-white">{{trans('web.page.mining_process.categories')}}</div>
                     </div>
                 </div>
                 @foreach($processes as $process)
-                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <div class="col-md-12 col-sm-12 col-lg-6 text-center">
                         <a href="{{route('show-mining-process', $process->id)}}">
                             <img src="{{$process->image}}" class="img-fluid category-img img-border-solid"
                                  alt="{{$process->id}}-image">
@@ -92,7 +92,7 @@
 
     <section class="contact-us mb-100">
         <div class="container">
-            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
+            <h4 class="mb-75 text-sm-center">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>

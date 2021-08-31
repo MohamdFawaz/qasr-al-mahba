@@ -459,7 +459,6 @@ input[type="submit"]:focus {
 
 .page-banner .banner-inner h2, .mining-page-banner .banner-inner h2, .animal-skin-page-banner .banner-inner h2, .mining-process-page-banner .banner-inner h2 {
     color: #ffffff;
-    font-size: 75px;
     line-height: 1.1;
     margin-bottom: 15px;
 }
@@ -673,10 +672,7 @@ input[type="submit"]:focus {
     width: 100%;
 }
 
-.gallery {
-    padding: 1em;
-    height: 100%;
-}
+
 
 .current-video {
     border-radius: 10px;
@@ -1908,9 +1904,7 @@ input[type="submit"]:focus {
     padding: 10px 0 20px;
 }
 
-.case-middle .middle-image {
-    max-width: 330px;
-}
+
 
 .case-middle .middle-content p {
     text-align: inherit;
@@ -1922,10 +1916,7 @@ input[type="submit"]:focus {
 }
 
 /* Case Sidebar */
-.case-sidebar {
-    max-width: 300px;
-    margin-right: auto;
-}
+
 
 .case-sidebar .sidebar-widget {
     margin-bottom: 80px;
@@ -2294,7 +2285,6 @@ input[type="submit"]:focus {
 /* Copyright And Footer Menu */
 .copyright-area {
     color: #f7f9fb;
-    padding: 17px 0;
     background: #333333;
 }
 
@@ -2409,7 +2399,6 @@ input[type="submit"]:focus {
     height: 48px;
     color: #ffffff;
     cursor: pointer;
-    margin-left: auto;
     border-radius: 15px;
     background: var(--primary-color, #18385f);
 }
@@ -2462,7 +2451,6 @@ input[type="submit"]:focus {
 
 .image-title {
     color: #18395f;
-    font-size: 4em;
     align-self: center;
     position: absolute;
     z-index: 10;
@@ -2472,10 +2460,7 @@ input[type="submit"]:focus {
     border: 2px solid #000;
 }
 
-.category-img {
-    max-width: 500px;
-    margin: 10px;
-}
+
 
 .text-shadow-white {
     text-shadow: -10px 0 10px #fff, 0 10px 10px #fff, 10px 0 10px #fff, 0 -10px 10px #fff;
@@ -2666,7 +2651,7 @@ input[type="submit"]:focus {
     order: 1;
     -webkit-align-self: initial;
     align-self: initial;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     flex-basis: auto;
     -webkit-transition: all 280ms ease;
     -moz-transition: all 280ms ease;
@@ -2683,7 +2668,6 @@ input[type="submit"]:focus {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
-    padding: 8px 7px;
 }
 
 .why-us-images {
@@ -2738,6 +2722,7 @@ input[type="submit"]:focus {
 
 .follow-us-section .rounded-social-buttons {
     background: #18395f;
+    padding-bottom: 15px;
 }
 
 .follow-us-section .rounded-social-buttons {
