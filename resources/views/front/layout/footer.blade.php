@@ -2,6 +2,9 @@
 <!--====================================================================
                         Start Footer Section
 =====================================================================-->
+<a href="{{url('support')}}" class="float" target="_blank">
+    <i class="far fa-comment-dots my-float"></i>
+</a>
 <footer class="footer-section bg-black  pt-50 rpt-100">
     <div class="container">
         <div class="row">

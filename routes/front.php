@@ -34,3 +34,5 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 
 Route::post('/contact-us', [HomeController::class, 'submitContact'])->name('submit-contact');
+
+Route::post('/chat/login', [\App\Http\Controllers\vendor\Chatify\User\MessagesController::class,'userLogin'])->name('chat.login-user');
