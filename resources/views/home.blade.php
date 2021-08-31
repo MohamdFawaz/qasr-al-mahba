@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
+    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.2')}}">
     <link rel="stylesheet" href="{{asset('vendors/quill/quill.snow.css')}}">
 @endsection
 @section('content')
@@ -128,7 +128,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="contact-us mb-100">
+        <section class="zero-padding-contact-us mb-100">
             <div class="container">
                 <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
                 @include('front.contact_us_form')

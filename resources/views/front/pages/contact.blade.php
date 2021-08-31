@@ -7,7 +7,7 @@
 
 @section('css')
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.1`')}}">
+    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.2`')}}">
 @endsection
 
 @section('content')
@@ -174,7 +174,7 @@
         Start Call Back Section
     =====================================================================-->
 
-    <section class="contact-us mb-100 pt-150 rpt-100">
+    <section class="zero-padding-contact-us mb-100 pt-150 rpt-100">
         <div class="container">
             <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')

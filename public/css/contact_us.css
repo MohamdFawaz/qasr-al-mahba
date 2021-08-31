@@ -531,17 +531,42 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
     border-bottom: 1px solid #d9d9d9;
     border-radius: 0;
 }
+
 .contact-us-input::placeholder, .contact-us-textarea::placeholder {
     color: #000;
 }
+
 .contact-us-textarea {
     border: 1px solid #d9d9d9;
 }
+
 .bt_bb_service_content_title {
     color: #000;
     font-weight: 500;
 }
-
+.bt_bb_service .bt_bb_icon_holder {
+    -webkit-transition: all 280ms ease;
+    -moz-transition: all 280ms ease;
+    transition: all 280ms ease;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    border-radius: 50%;
+    font-size: 30px;
+    padding: 15px;
+}
+.zero-padding-contact-us .bt_bb_icon_holder  {
+    padding: 0px;
+}
 .bt_bb_icon_holder {
     margin: auto;
     box-shadow: 0 0 0 1em #18385f inset;
@@ -580,6 +605,25 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
     -ms-flex-order: 1;
     order: 1;
     padding: 25px;
+
+    -webkit-transition: all 280ms ease;
+    -moz-transition: all 280ms ease;
+    transition: all 280ms ease;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    border-radius: 50%;
+    font-size: 30px;
+    padding: 15px;
 }
 
 .contact-us-form .btn-primary {
@@ -589,3 +633,58 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
 .bt_bb_service_content {
     text-align: center;
 }
+
+.glow {
+    animation: glow 1s infinite
+}
+.success-message {
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 250ms;
+    color: #fff;
+    background: #28a745;
+    line-height: 52px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    display: none;
+}
+
+.success-message.shown {
+    opacity: 1;
+    z-index: 1;
+    display: block;
+}
+@keyframes glow {
+
+0,100%  {
+    color: #fff
+}
+50%{
+    color: #FDA543
+}
+}
+.error-message {
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 250ms;
+    color: #fff;
+    background: #F63D3A;
+    line-height: 52px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    display: none;
+}
+
+.error-message.shown {
+    opacity: 1;
+    z-index: 1;
+    display: block;
+}
+
+

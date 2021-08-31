@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Mail\ContactMail;
 use App\Services\ArticleService;
 use App\Services\HomepageBannerService;
 use App\Services\PartnerService;
 use App\Services\VideoLinkService;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController
 {
@@ -38,6 +42,17 @@ class HomeController
     {
         $partners = $this->partnerService->get();
         return view('front.pages.contact', compact('partners'));
+    }
+
+    public function submitContact(Request $request)
+    {
+        try{
+            Mail::to(config('mail.to.address'))->send(new ContactMail($request->all()));
+            return \response()->json('success');
+        }catch (\Exception $e) {
+            reportException($e);
+            return response()->json('somthing went wrong', Response::HTTP_BAD_REQUEST);
+        }
     }
 
 }
