@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('css/contact_us.css?v=1.3')}}">
     <link rel="stylesheet" href="{{asset('vendors/quill/quill.snow.css')}}">
 @endsection
 @section('content')
