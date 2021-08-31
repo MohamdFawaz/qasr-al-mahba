@@ -20,6 +20,7 @@
             let data = $('.contact-us-form').serialize();
             axios.post('/contact-us', data).then(response => {
                 $sucess.addClass('shown')
+                $('form')[0].reset();
             }, err => {
                 console.log(err);
                 $error.addClass('shown');
