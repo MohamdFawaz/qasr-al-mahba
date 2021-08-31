@@ -118,7 +118,7 @@
                 <h2 class="text-center">{{trans('web.home.articles')}}</h2>
             @foreach($articles as $article)
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 pl-30 pr-30">
                         <h3>{{$article->title}}</h3>
                         <div class="ql-editor">
                             {!! $article->content !!}

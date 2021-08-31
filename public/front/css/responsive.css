@@ -102,6 +102,9 @@
         padding: 1em;
         height: 100%;
     }
+    .case-middle .middle-image {
+        max-width: 330px;
+    }
 }
 
 
@@ -357,6 +360,7 @@
         max-width: 100%;
         margin-left: 0;
         margin: 20px 0;
+        text-align: center;
     }
     .case-middle .middle-image img {
         width: 100%;

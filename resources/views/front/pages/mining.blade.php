@@ -115,13 +115,13 @@
                                     <div class="case-middle text-dark">
                                         <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
                                              data-wow-delay=".5s">
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 col-sm-12">
                                                 <div class="middle-content">
                                                     <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 col-sm-12">
                                                 <div class="middle-image ml-auto">
                                                     <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
                                                 </div>
@@ -136,12 +136,12 @@
                                     <div class="case-middle text-dark">
                                         <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
                                              data-wow-delay=".5s">
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 col-sm-12">
                                                 <div class="middle-image">
                                                     <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 col-sm-12">
                                                 <div class="middle-content">
                                                     <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>

@@ -1904,9 +1904,7 @@ input[type="submit"]:focus {
     padding: 10px 0 20px;
 }
 
-.case-middle .middle-image {
-    max-width: 330px;
-}
+
 
 .case-middle .middle-content p {
     text-align: inherit;

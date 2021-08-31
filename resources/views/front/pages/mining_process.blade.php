@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 @foreach($processes as $process)
-                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <div class="col-md-12 col-sm-12 col-lg-6 text-center">
                         <a href="{{route('show-mining-process', $process->id)}}">
                             <img src="{{$process->image}}" class="img-fluid category-img img-border-solid"
                                  alt="{{$process->id}}-image">
