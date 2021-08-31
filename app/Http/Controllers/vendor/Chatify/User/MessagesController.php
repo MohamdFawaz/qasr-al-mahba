@@ -497,9 +497,8 @@ class MessagesController extends Controller
         if (!$user) {
             $adminLatestId = Admin::query()->orderBy('id', 'desc')->first()->id;
             $user = User::query()->create(['id' => random_int(1, 100000),'name' => $request->name, 'email' => $request->email]);
-            $latestMessageId = Message::query()->orderBy('id','DESC')->first()->id;
             Chatify::newMessage([
-                'id' => $latestMessageId ? $latestMessageId + 1 : 1,
+                'id' => mt_rand(9, 999999999) + time(),
                 'type' => 'user',
                 'from_id' => $user->id,
                 'to_id' => $adminLatestId,
