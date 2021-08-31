@@ -9,10 +9,11 @@
         "astrotomic/laravel-translatable": "^11.9",
         "barryvdh/laravel-translation-manager": "master",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.0.0",
+        "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.3"
+        "laravel/ui": "^3.3",
+        "munafio/chatify": "^1.2"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",

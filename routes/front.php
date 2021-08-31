@@ -32,3 +32,5 @@ Route::get('/animal-skin/{id}', [AnimalSkinController::class, 'show'])->name('sh
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
+
+Route::post('/chat/login', [\App\Http\Controllers\vendor\Chatify\User\MessagesController::class,'userLogin'])->name('chat.login-user');
