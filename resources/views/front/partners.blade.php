@@ -2,7 +2,7 @@
     <div class="container">
         <h4>{{trans('web.home.our_trusted')}} {{trans('web.home.partners')}}.</h4>
         <div class="row">
-            <div class="col-12">
+            <div class="col-lg-12">
                 <div class="partner-wrap">
                     @if(count($partners))
                         @foreach($partners as $partner)

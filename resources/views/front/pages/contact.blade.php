@@ -124,10 +124,10 @@
         <div class="container">
             <h2 class="titillium-font text-center">{{trans('web.page.contact.let_get_in_touch_title')}}</h2>
             <div class="row">
-                <div class="col-2">
+                <div class="col-lg-2 d-sm-none d-md-none">
 
                 </div>
-                <div class="col-10">
+                <div class="col-lg-10 col-sm-12">
                     <div class="wrapper row get-in-touch">
                         <div class="col-12">
                             <ul class="get-in-touch-list">
@@ -154,8 +154,8 @@
 
     <section class="follow-us-section pt-50 rpt-50">
         <div class="container">
-            <h2 class="titillium-font text-right">{{trans('web.page.contact.follow_us')}}</h2>
-            <div class="row float-right">
+            <h2 class="titillium-font text-lg-right text-sm-center">{{trans('web.page.contact.follow_us')}}</h2>
+            <div class="row float-lg-right d-sm-grid m-sm-auto">
                 <div class="rounded-social-buttons">
                     <a class="social-button facebook" href="{{trans('web.footer.facebook_link')}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="social-button twitter" href="{{trans('web.footer.twitter_link')}}" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -176,7 +176,7 @@
 
     <section class="zero-padding-contact-us mb-100 pt-150 rpt-100">
         <div class="container">
-            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
+            <h4 class="mb-75 text-sm-center">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>

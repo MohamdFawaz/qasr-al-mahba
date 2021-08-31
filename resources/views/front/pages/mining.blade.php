@@ -48,7 +48,7 @@
     <section class="case-details pt-150 rpt-100">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 col-sm-12">
                     <div class="case-details-content">
                         <div class="section-title">
                             <h2>{{trans('web.page.mining.guaranteed_return_of_investment_title')}}</h2>
@@ -57,8 +57,8 @@
                         <p>{{trans('web.page.mining.guaranteed_return_of_investment_desc')}}</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <img src="{{asset('images/mining-concept.jpeg')}}" class="img-fluid " style="width: 300px"
+                <div class="col-lg-4 col-sm-12">
+                    <img src="{{asset('images/mining-concept.jpeg')}}" class="img-fluid mining-concept"
                          alt="mining-page-side-image">
                     <div class="case-sidebar">
                         <div class="sidebar-widget information-widget bg-snow">
@@ -157,10 +157,10 @@
             </div>
             <div class="thumbnails mb-30">
                 <img src="{{asset('images/Mining_quarry_equipment.jpeg')}}" class="img-fluid w-100">
-                <div class="image-title titillium-font">{{trans('web.page.mining.available_license_title')}}</div>
+                <div class="image-title titillium-font available-license-title">{{trans('web.page.mining.available_license_title')}}</div>
             </div>
             <div class="row mb-50">
-                <div class="col-6">
+                <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
                         <select class="form-control" onchange="copyToClipboard(this)" id="code-select">
@@ -174,7 +174,7 @@
                         {{trans('web.page.mining.code_content')}}
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-sm-12">
                     <img src="{{asset('images/4.jpg')}}">
                 </div>
                 <div class="col-12 text-center mt-50" id="redirection-section">
@@ -199,7 +199,7 @@
 
     <section class="contact-us mb-100">
         <div class="container">
-            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
+            <h4 class="mb-75 text-sm-center">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>

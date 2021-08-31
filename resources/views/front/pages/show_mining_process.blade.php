@@ -28,7 +28,7 @@
                             aria-current="page">{{trans('web.breadcrumb.show_mining_process')}}</li>
                     </ol>
                 </nav>
-                <h2 class="text-center wow fadeInUp"
+                <h2 class="text-center wow fadeInUp smaller-page-heading"
                     data-wow-duration="1.5s">{{$process->name}}</h2>
                 <a href="{{route('contact')}}" class="align-center theme-btn wow fadeInUp" data-wow-duration="1s"
                    data-wow-delay="1s">
@@ -68,7 +68,7 @@
     <section class="animal-skin-categories">
         <div class="container">
             <div class="row">
-                <h2 class="titillium-font text-center"
+                <h2 class="titillium-font text-center smaller-heading"
                     style="color: #18395f;">{{trans('web.page.mining_process.realistic_image_for')}} {{ $process->name }}</h2>
                 @foreach($process->images as $image)
                     <div class="col-lg-6 col-md-12 col-sm-12 text-center">
@@ -85,7 +85,7 @@
 
     @if($process->products->count())
     <section class="products-slider mb-50">
-        <h2 class="titillium-font text-center"
+        <h2 class="titillium-font text-center smaller-heading"
             style="color: #18395f;">{{$process->name}} {{trans('web.show_mining_process.famous_products')}}</h2>
         <div class="tcb-product-slider">
             <div class="container" style="height: 400px">
@@ -131,9 +131,9 @@
         Start Call Back Section
     =====================================================================-->
 
-    <section class="contact-us mb-100">
+    <section class="zero-padding-contact-us mb-100">
         <div class="container">
-            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
+            <h4 class="mb-75 text-sm-center">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>
