@@ -2,7 +2,7 @@
     .partners-section .slick-initialized {
         margin-right: -100px;
     }
-    
+
 }
 
 
@@ -10,7 +10,7 @@
     .team-item {
         width: 33%;
     }
-    
+
 }
 
 
@@ -28,7 +28,7 @@
 	.success-wrap {
 	    transform: translateY(-35%);
 	}
-    
+
 }
 
 
@@ -37,7 +37,7 @@
         max-width: 1270px;
         padding: 0 50px;
     }
-    
+
 }
 
 
@@ -67,7 +67,7 @@
     .textimonial-content p:after {
         bottom: -60px;
     }
-    
+
 }
 
 
@@ -75,15 +75,41 @@
     .about-content {
         max-width: 460px;
     }
-    
+    .image-title {
+        font-size: 4em;
+    }
+    .mining-concept {
+        width: 300px
+    }
+    .case-sidebar {
+        max-width: 300px;
+        margin-right: auto;
+    }
+    .category-img {
+        max-width: 500px;
+        margin: 10px;
+    }
+    .page-banner .banner-inner h2, .mining-page-banner .banner-inner h2, .animal-skin-page-banner .banner-inner h2, .mining-process-page-banner .banner-inner h2 {
+        font-size: 75px;
+    }
+    .scroll-top {
+        margin-left: auto;
+    }
+    .copyright-area {
+        padding: 17px 0;
+    }
+    .gallery {
+        padding: 1em;
+        height: 100%;
+    }
 }
 
 
-@media only screen and (max-width: 1199px) and (min-width: 992px) { 
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
     .success-item {
         padding-left: 90px;
     }
-    
+
 }
 
 
@@ -103,8 +129,12 @@
     }
     .section-title {
         margin-bottom: 45px;
+        text-align: center;
     }
-    .section-title h2 {
+    .mining-resources, .available-license-title, .available-resources, .smaller-heading {
+        font-size: 20px;
+    }
+    .section-title h2, .smaller-page-heading{
         font-size: 50px;
     }
     .separetor {
@@ -207,11 +237,37 @@
     .map-inner .map {
         height: 350px;
     }
-    
+
 }
 
 
-@media only screen and (max-width: 767px) {    
+@media only screen and (max-width: 767px) {
+    .why-us-images {
+        margin-bottom: 20px;
+    }
+    #textbox h2 {
+        font-size: 25px;
+    }
+    #textbox p {
+        font-size: 8px;
+        font-weight: 700;
+    }
+    .contact-us-form {
+        margin-top: 20px;
+    }
+    .widget p {
+        text-align: center;
+    }
+    .d-sm-none {
+        display: none;
+    }
+    .text-md-center, .text-sm-center {
+        text-align: center !important;
+    }
+    .expertise-content {
+        margin-top: 10px;
+        padding: 0 !important;
+    }
     .container,
     .container-fluid {
         padding: 0 30px;
@@ -219,7 +275,7 @@
     .hero-section {
         height: 625px;
     }
-    .theme-btn, 
+    .theme-btn,
     a.theme-btn {
         padding: 15px 30px;
         min-width: 150px;
@@ -243,10 +299,14 @@
         line-height: 45px;
     }
     .partners-section .slick-list {
-        margin-left: 65px;
+        margin-left: 0px !important;
     }
     .partners-section .partner-item {
         margin-left: 25px;
+        padding: 10px 10px !important;
+    }
+    .d-sm-grid {
+        display: grid;
     }
     .case-image:before {
         bottom: -1px;
@@ -332,7 +392,7 @@
     .error-content .content-right {
         margin-top: 40px;
     }
-    
+
 }
 
 
@@ -359,12 +419,35 @@
 @media only screen and (max-width: 767px) and (min-width: 500px) {
     .success-item {
         padding-left: 55px;
+        border-right: none !important;
+    }
+    .gallery {
+        padding: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 10px;
+        height: 300px;
     }
 
+    }
+    .gallery {
+        padding: 1em;
+        height: 100%;
+    }
+    .player {
+        padding: 0;
+    }
 }
 
 
 @media only screen and (max-width: 575px) {
+    .gallery {
+        padding: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 10px;
+        height: 300px;
+    }
     .header-top {
         display: none;
     }
@@ -384,10 +467,20 @@
     .widget .social-style-two a {
         margin-right: 2px;
     }
-    
+
 }
 
 @media only screen and (max-width: 480px) {
+    .gallery {
+        padding: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 10px;
+        height: 300px;
+    }
+    .player {
+        padding: 0 !important;
+    }
     .hero-inner h1 {
         font-size: 50px;
     }
@@ -422,13 +515,21 @@
     .error-content .content-left h3 {
         font-size: 25px;
     }
-    
+
 }
 
 
 @media only screen and (max-width: 420px) {
+    .gallery {
+        padding: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 10px;
+        height: 300px;
+    }
     .success-item {
         padding-left: 0;
+        border-right: none !important;
     }
     .success-wrap {
         padding-left: 70px;
@@ -506,7 +607,7 @@
     .case-details-content h3 {
         font-size: 26px;
     }
-    
+
 }
 
 

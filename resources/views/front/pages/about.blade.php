@@ -156,7 +156,7 @@
                     <div class="case-details-content">
                         <div class="section-title text-center">
                             <h2 class="titillium-font mt-10 category-title"> {{trans('web.page.about.why_choose_us_title')}} </h2>
-                            <p>
+                            <p class="text-sm-center">
                                 {{trans('web.pages.about.why_choose_us_content')}}
                             </p>
                         </div>
@@ -184,10 +184,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="wrapper row our-expertise">
-                        <div class="col-6">
-                            <img src="{{asset('images/3.jpg')}}" class="img-fluid expertise-image">
+                        <div class="col-lg-6 col-xl-6 col-sm-12">
+                            <img src="{{asset('images/3.jpg')}}" class="img-fluid expertise-image d-sm-none">
+                            <img src="{{asset('images/3.jpg')}}" class="img-fluid d-lg-none d-xl-none d-md-none">
                         </div>
-                        <div class="col-6 expertise-content">
+                        <div class="col-lg-6 col-xl-6 col-sm-12 expertise-content">
                             <h4 class="titillium-font text-center" style="color: #18395f">{{trans('web.page.about.out_expertise_title')}}</h4>
                             <p class="text-center">
                                 {{trans('web.page.about.out_expertise_content')}}
@@ -218,7 +219,7 @@
 
     <section class="zero-padding-contact-us mb-100 pt-150 rpt-100">
         <div class="container">
-            <h4 class="mb-75">{{trans('web.home.contact_us_title')}}</h4>
+            <h4 class="mb-75 text-sm-center">{{trans('web.home.contact_us_title')}}</h4>
             @include('front.contact_us_form')
         </div>
     </section>
