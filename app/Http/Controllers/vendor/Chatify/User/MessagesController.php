@@ -496,7 +496,15 @@ class MessagesController extends Controller
         $user = User::query()->where('email', $request->email)->first();
         if (!$user) {
             $adminLatestId = Admin::query()->orderBy('id', 'desc')->first()->id;
-            $user = User::query()->create(['id' => $adminLatestId + 1,'name' => $request->name, 'email' => $request->email]);
+            $user = User::query()->create(['id' => random_int(1, 100000),'name' => $request->name, 'email' => $request->email]);
+            Chatify::newMessage([
+                'id' => (Message::query()->orderBy('id','DESC')->first()->id + 1),
+                'type' => 'user',
+                'from_id' => $user->id,
+                'to_id' => $adminLatestId,
+                'body' => 'Hello',
+                'attachment' => null
+            ]);
         }
         \auth()->guard('users')->login($user);
         return redirect()->route('support');
