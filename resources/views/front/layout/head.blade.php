@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{asset('front/css/menu.css?v=1.5')}}">
     <link rel="stylesheet" href="{{asset('front/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('front/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/leaflet.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/spacing.min.css')}}">
     <!-- Responsive CSS -->
@@ -27,5 +26,5 @@
 </head>
 
 <body>
-<div class="preloader"></div>
+{{--<div class="preloader"></div>--}}
 <!-- Preloader -->

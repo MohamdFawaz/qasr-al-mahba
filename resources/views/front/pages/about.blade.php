@@ -179,38 +179,6 @@
         </div>
     </section>
 
-    <section class="pt-150 rpt-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="wrapper row our-expertise">
-                        <div class="col-lg-6 col-xl-6 col-sm-12">
-                            <img src="{{asset('images/3.jpg')}}" class="img-fluid expertise-image d-sm-none">
-                            <img src="{{asset('images/3.jpg')}}" class="img-fluid d-lg-none d-xl-none d-md-none">
-                        </div>
-                        <div class="col-lg-6 col-xl-6 col-sm-12 expertise-content">
-                            <h4 class="titillium-font text-center" style="color: #18395f">{{trans('web.page.about.out_expertise_title')}}</h4>
-                            <p class="text-center">
-                                {{trans('web.page.about.out_expertise_content')}}
-                            </p>
-                            <ul class="expertise-list">
-                                <li>
-                                    {{trans('web.page.about.out_expertise_title_list_item_1')}}
-                                </li>
-                                <li>
-                                    {{trans('web.page.about.out_expertise_title_list_item_2')}}
-                                </li>
-                                <li>
-                                    {{trans('web.page.about.out_expertise_title_list_item_3')}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!--====================================================================
         Start Call Back Section
