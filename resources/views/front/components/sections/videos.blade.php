@@ -1,4 +1,4 @@
-<section class="video-section bg-snow pt-140 mb-50 rpt-90 pb-110 rpb-60">
+<section class="video-section bg-snow pt-50 mb-50 rpt-50 pb-50 rpb-60">
     <div class="container">
         <div class="row">
             @if(count($links))
