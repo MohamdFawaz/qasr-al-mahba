@@ -1,4 +1,4 @@
-<section class="investing-section pt-135 rpt-85 pb-145 rpb-130">
+<section class="investing-section">
     <div class="container" style="position: relative">
         <div class="row">
             <img src="{{asset('images/invest_map.jpg')}}">

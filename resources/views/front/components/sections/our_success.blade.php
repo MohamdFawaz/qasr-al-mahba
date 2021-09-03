@@ -1,4 +1,4 @@
-<div class="our-success pb-30 rpb-0 wow fadeInUp" data-wow-duration="2s">
+<div class="our-success wow fadeInUp" data-wow-duration="2s">
     <div class="container">
         <div class="success-wrap bg-blue">
             <div class="row">
