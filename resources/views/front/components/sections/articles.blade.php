@@ -1,4 +1,4 @@
-<section class="articles-section pt-135 rpt-85 pb-145 rpb-130">
+<section class="articles-section pt-50">
     <div class="container" style="position: relative">
         <h2 class="text-center">{{trans('web.home.articles')}}</h2>
         @foreach($articles as $article)

@@ -1,4 +1,4 @@
-<section class="partners-section pt-135 rpt-85 pb-145 rpb-130">
+<section class="partners-section pt-50 rpt-50 pb-50 rpb-50">
     <div class="container">
         <h4>{{trans('web.home.our_trusted')}} {{trans('web.home.partners')}}.</h4>
         <div class="row">
