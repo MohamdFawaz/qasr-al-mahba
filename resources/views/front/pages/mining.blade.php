@@ -173,6 +173,7 @@
                     </table>
                 </div>
                 <div class="col-lg-6 d-lg-block d-sm-none">
+                    <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
                         <select class="form-control" onchange="copyToClipboard(this)" id="code-select">
@@ -232,6 +233,8 @@
                 document.execCommand("Copy");
                 $('body').find("#selVal").remove();
                 $('#redirection-section').css('display', 'block');
+                $('.success-code').removeClass("d-none");
+                setTimeout( function(){ $('.success-code').addClass("d-none"); }, 3000 );
             }
 
         </script>
