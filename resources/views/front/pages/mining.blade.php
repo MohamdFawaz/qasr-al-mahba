@@ -160,7 +160,19 @@
                 <div class="image-title titillium-font available-license-title">{{trans('web.page.mining.available_license_title')}}</div>
             </div>
             <div class="row mb-50">
-                <div class="col-lg-6 col-sm-12">
+                <div class="col-sm-12 d-sm-block d-lg-none">
+                    <table class="codes-table">
+                        <tr>
+                            <th>{{trans('web.page.mining.codes_table_header')}}</th>
+                        </tr>
+                        @foreach($codes as $code)
+                        <tr>
+                            <td>{{$code->code}}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+                <div class="col-lg-6 d-lg-block d-sm-none">
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
                         <select class="form-control" onchange="copyToClipboard(this)" id="code-select">

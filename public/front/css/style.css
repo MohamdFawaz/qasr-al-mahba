@@ -2746,3 +2746,16 @@ input[type="submit"]:focus {
     margin-top:16px;
     color: white;
 }
+.codes-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.codes-table td, .codes-table th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
