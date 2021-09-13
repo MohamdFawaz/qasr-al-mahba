@@ -168,7 +168,12 @@
                         @foreach($codes as $code)
                         <tr>
                             <td>
-                                <h5>{{$code->code}}</h5>
+                                <span>{{$code->code}}</span>
+                                <a href="javascript:void(0)"
+                                   onclick="copyToClipboard(this, 'table')"
+                                   class="copy-btn float-right" data-clipboard-content="{{$code->code}}">
+                                    <i class="fa fa-copy"></i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
@@ -178,7 +183,7 @@
                     <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
-                        <select class="form-control" onchange="copyToClipboard(this)" id="code-select">
+                        <select class="form-control" onchange="copyToClipboard(this, 'select')" id="code-select">
                             <option value="">{{trans('web.page.mining.select_code_placeholder')}}</option>
                             @foreach($codes as $code)
                                 <option value="{{$code->code}}">{{$code->code}}</option>
@@ -226,9 +231,8 @@
     @endsection
     @section('js')
         <script>
-
-            copyToClipboard = (e) => {
-                const code = $('#code-select').val();
+            copyToClipboard = (e,type) => {
+                const code = type === 'select' ? $('#code-select').val() : $(e).attr('data-clipboard-content');
                 var value = `<input value="${code}" id="selVal" />`;
                 $(value).insertAfter('#code-select');
                 $("#selVal").select();
