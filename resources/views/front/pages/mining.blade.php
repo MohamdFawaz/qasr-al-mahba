@@ -231,13 +231,23 @@
     @section('js')
         <script>
             copyToClipboard = (e,type) => {
-                const code = type === 'select' ? $('#code-select').val() : $(e).attr('data-clipboard-content');
-                var value = `<input value="${code}" id="selVal" />`;
-                $(value).insertAfter('#code-select');
-                $("#selVal").select();
-                document.execCommand("Copy");
-                $('body').find("#selVal").remove();
-                $('#redirection-section').css('display', 'block');
+                if (type === 'select') {
+                    const code = $('#code-select').val();
+                    var value = `<input value="${code}" id="selVal" />`;
+                    $(value).insertAfter('#code-select');
+                    $("#selVal").select();
+                    document.execCommand("Copy");
+                    $('body').find("#selVal").remove();
+                    $('#redirection-section').css('display', 'block');
+                }else{
+                    let code = $(e).attr('data-clipboard-content');
+                    const shareData = {
+                        title: code,
+                        text: code,
+                        url: code
+                    }
+                    navigator.share(shareData)
+                }
                 $('.success-code').removeClass("d-none");
                 setTimeout( function(){ $('.success-code').addClass("d-none"); }, 3000 );
             }
