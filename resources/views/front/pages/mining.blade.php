@@ -161,6 +161,7 @@
             </div>
             <div class="row mb-50">
                 <div class="col-sm-12 d-sm-block d-lg-none">
+                    <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <table class="codes-table">
                         <tr>
                             <th>{{trans('web.page.mining.codes_table_header')}}</th>
@@ -168,12 +169,10 @@
                         @foreach($codes as $code)
                         <tr>
                             <td>
-                                <span>{{$code->code}}</span>
-                                <a href="javascript:void(0)"
-                                   onclick="copyToClipboard(this, 'table')"
-                                   class="copy-btn float-right" data-clipboard-content="{{$code->code}}">
-                                    <i class="fa fa-copy"></i>
-                                </a>
+                                <span onclick="copyToClipboard(this, 'table')" data-clipboard-content="{{$code->code}}">
+                                    {{$code->code}}
+                                    <i class="fa fa-copy float-right"></i>
+                                </span>
                             </td>
                         </tr>
                         @endforeach
