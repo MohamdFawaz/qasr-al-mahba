@@ -161,6 +161,7 @@
             </div>
             <div class="row mb-50">
                 <div class="col-sm-12 d-sm-block d-lg-none">
+                    <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <table class="codes-table">
                         <tr>
                             <th>{{trans('web.page.mining.codes_table_header')}}</th>
@@ -168,7 +169,10 @@
                         @foreach($codes as $code)
                         <tr>
                             <td>
-                                <h5>{{$code->code}}</h5>
+                                <span onclick="copyToClipboard(this, 'table')" data-clipboard-content="{{$code->code}}">
+                                    {{$code->code}}
+                                    <i class="fa fa-copy float-right"></i>
+                                </span>
                             </td>
                         </tr>
                         @endforeach
@@ -178,7 +182,7 @@
                     <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <div class="form-group">
                         <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
-                        <select class="form-control" onchange="copyToClipboard(this)" id="code-select">
+                        <select class="form-control" onchange="copyToClipboard(this, 'select')" id="code-select">
                             <option value="">{{trans('web.page.mining.select_code_placeholder')}}</option>
                             @foreach($codes as $code)
                                 <option value="{{$code->code}}">{{$code->code}}</option>
@@ -226,15 +230,23 @@
     @endsection
     @section('js')
         <script>
-
-            copyToClipboard = (e) => {
-                const code = $('#code-select').val();
-                var value = `<input value="${code}" id="selVal" />`;
-                $(value).insertAfter('#code-select');
-                $("#selVal").select();
-                document.execCommand("Copy");
-                $('body').find("#selVal").remove();
-                $('#redirection-section').css('display', 'block');
+            copyToClipboard = (e,type) => {
+                if (type === 'select') {
+                    const code = $('#code-select').val();
+                    var value = `<input value="${code}" id="selVal" />`;
+                    $(value).insertAfter('#code-select');
+                    $("#selVal").select();
+                    document.execCommand("Copy");
+                    $('body').find("#selVal").remove();
+                    $('#redirection-section').css('display', 'block');
+                }else{
+                    let code = $(e).attr('data-clipboard-content');
+                    const shareData = {
+                        title: code,
+                        text: code
+                    }
+                    navigator.share(shareData)
+                }
                 $('.success-code').removeClass("d-none");
                 setTimeout( function(){ $('.success-code').addClass("d-none"); }, 3000 );
             }
