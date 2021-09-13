@@ -243,8 +243,7 @@
                     let code = $(e).attr('data-clipboard-content');
                     const shareData = {
                         title: code,
-                        text: code,
-                        url: code
+                        text: code
                     }
                     navigator.share(shareData)
                 }
