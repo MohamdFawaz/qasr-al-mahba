@@ -167,7 +167,9 @@
                         </tr>
                         @foreach($codes as $code)
                         <tr>
-                            <td><span>{{$code->code}}</span></td>
+                            <td>
+                                <h5>{{$code->code}}</h5>
+                            </td>
                         </tr>
                         @endforeach
                     </table>
