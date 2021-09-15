@@ -194,7 +194,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
-                    <img src="{{asset('images/4.jpg')}}">
+                    @if($videoLink)
+                        <iframe id="current-video" class="current-video" style="height: 100%;width: 100%"
+                                src="https://www.youtube.com/embed/{{$videoLink}}" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    @else
+                        <img src="{{asset('images/4.jpg')}}">
+                    @endif
                 </div>
                 <div class="col-12 text-center mt-50" id="redirection-section">
                     <h4>{{trans('web.page.mining.use_the_code_for_information_and_location_preview')}}</h4>

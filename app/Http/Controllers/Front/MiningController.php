@@ -25,7 +25,9 @@ class MiningController
     {
         $codes = $this->miningLicenseCodeService->get();
         $resources = $this->miningResourceService->get();
-        return view('front.pages.mining', compact('codes','resources'));
+        parse_str( parse_url( trans('web.page.mining.code_video_link'), PHP_URL_QUERY ), $urlArr );
+        $videoLink = isset($urlArr['v']) ? $urlArr['v'] :  "";
+        return view('front.pages.mining', compact('codes','resources','videoLink'));
     }
 
     public function getMiningLicenseCodeDetails($code)
