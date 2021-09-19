@@ -78,7 +78,8 @@
                                                                 <input type="text" id="title-{{$locale}}"
                                                                        class="form-control"
                                                                        name="title[{{$locale}}]"
-                                                                       placeholder="{{ucwords($locale)}} Banner Title" required value="{{$banner->translate($locale)->title}}">
+                                                                       placeholder="{{ucwords($locale)}} Banner Title" required
+                                                                       value="{{$banner->translate($locale)->title ?? ""}}">
                                                             </div>
                                                         </div>
                                                     </div>

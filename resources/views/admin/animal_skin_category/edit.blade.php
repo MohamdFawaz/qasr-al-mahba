@@ -78,7 +78,7 @@
                                                                        class="form-control"
                                                                        name="title[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Animal Skin Category Title"
-                                                                       value="{{$category->translate($locale)->title}}"
+                                                                       value="{{$category->translate($locale)->title ?? ""}}"
                                                                        required>
                                                             </div>
                                                         </div>
@@ -89,7 +89,7 @@
                                                                        class="form-control"
                                                                        name="name[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Animal Skin Category Name"
-                                                                       value="{{$category->translate($locale)->name}}"
+                                                                       value="{{$category->translate($locale)->name ?? ""}}"
                                                                        required>
                                                             </div>
                                                         </div>
@@ -100,7 +100,7 @@
                                                                           id="description-{{$locale}}"
                                                                           name="description[{{$locale}}]"
                                                                           placeholder="{{ucwords($locale)}} Animal Skin Category Description"
-                                                                          rows="3">{{$category->translate($locale)->description}}</textarea>
+                                                                          rows="3">{{$category->translate($locale)->description ?? ""}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>

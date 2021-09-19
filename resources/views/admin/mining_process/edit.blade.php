@@ -84,7 +84,7 @@
                                                                        name="name[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Mining Process Name"
                                                                        required
-                                                                       value="{{$process->translate($locale)->name}}">
+                                                                       value="{{$process->translate($locale)->name ?? ""}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
@@ -95,7 +95,7 @@
                                                                        name="title[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Mining Process Title"
                                                                        required
-                                                                       value="{{$process->translate($locale)->title}}">
+                                                                       value="{{$process->translate($locale)->title ?? ""}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
@@ -105,7 +105,7 @@
                                                                           id="description-{{$locale}}"
                                                                           name="description[{{$locale}}]"
                                                                           placeholder="{{ucwords($locale)}} Mining Process Description"
-                                                                          rows="3">{{$process->translate($locale)->description}}</textarea>
+                                                                          rows="3">{{$process->translate($locale)->description ?? ""}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>

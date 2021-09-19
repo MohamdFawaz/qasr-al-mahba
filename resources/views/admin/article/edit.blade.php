@@ -66,7 +66,7 @@
                                                                        class="form-control"
                                                                        name="title[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Article Title"
-                                                                       required value="{{$article->translate($locale)->title}}">
+                                                                       required value="{{$article->translate($locale)->title ?? ""}}">
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
@@ -76,7 +76,7 @@
                                                                     <div class="card">
                                                                         <div class="card-body">
                                                                             <div id="full-editor-{{$locale}}">
-                                                                                {!! $article->translate($locale)->content !!}
+                                                                                {!! $article->translate($locale)->content ?? "" !!}
                                                                             </div>
                                                                             <textarea name="content[{{$locale}}]" style="display:none" id="content-{{$locale}}"></textarea>
                                                                         </div>

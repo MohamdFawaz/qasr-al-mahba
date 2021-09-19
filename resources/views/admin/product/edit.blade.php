@@ -114,7 +114,7 @@
                                                                        name="name[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Product Name"
                                                                        required
-                                                                       value="{{$product->translate($locale)->name}}">
+                                                                       value="{{$product->translate($locale)->name ?? ""}}">
                                                             </div>
                                                         </div>
                                                     </div>

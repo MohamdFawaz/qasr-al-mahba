@@ -75,7 +75,7 @@
                                                                        class="form-control"
                                                                        name="title[{{$locale}}]"
                                                                        placeholder="{{ucwords($locale)}} Mining Resource Title"
-                                                                       value="{{$resource->translate($locale)->title}}"
+                                                                       value="{{$resource->translate($locale)->title ?? ""}}"
                                                                        required>
                                                             </div>
                                                         </div>
@@ -86,7 +86,7 @@
                                                                           id="description-{{$locale}}"
                                                                           name="description[{{$locale}}]"
                                                                           placeholder="{{ucwords($locale)}} Mining Resource Description"
-                                                                          rows="3">{{$resource->translate($locale)->description}}</textarea>
+                                                                          rows="3">{{$resource->translate($locale)->description ?? ""}}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>
