@@ -8,7 +8,7 @@
                         @foreach($partners as $partner)
                             <div class="partner-item m-auto">
                                 <a href="{{$partner->link}}" target="_blank">
-                                    <img src="{{$partner->image}}" style="width: 200px" alt="{{$partner->id}}-partner-image">
+                                    <img src="{{$partner->image}}" style="width: 275px" alt="{{$partner->id}}-partner-image">
                                 </a>
                             </div>
                         @endforeach
