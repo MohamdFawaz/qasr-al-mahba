@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('front/css/responsive.css?v=1.1')}}">
     @if(app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{asset('front/css/menu.rtl.min.css?v=1.0')}}">
-        <link rel="stylesheet" href="{{asset('front/css/style.rtl.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{asset('front/css/style.rtl.min.css?v=1.2')}}">
     @else
         <link rel="stylesheet" href="{{asset('front/css/menu.min.css?v=1.7')}}">
         <link rel="stylesheet" href="{{asset('front/css/style.min.css?v=1.20')}}">
