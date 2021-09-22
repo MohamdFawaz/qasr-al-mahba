@@ -2573,9 +2573,14 @@ input[type="submit"]:focus {
     text-align: left;
 }
 
-.odd-resource-text, .odd-resource-text p{
+.odd-resource-text, .odd-image {
     text-align: right;
 }
+
+.odd-resource-text h4 , .odd-resource-text p{
+    text-align: left;
+}
+
 
 
 .mining-code-content{
