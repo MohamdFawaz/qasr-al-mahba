@@ -1,0 +1,88 @@
+/* 16 of 173 CSS properties converted by rtl.daskhat.ir
+ These properties should be override originals.
+ just load rtl css file after original css file.*/
+
+/* body {direction:rtl;} */
+div {
+    direction: rtl;
+}
+
+.main-header{
+    right: 0px;
+}
+
+.top-inner:before{
+    right: -14%;
+}
+
+.top-inner:after{
+    right: -14%;
+}
+
+.top-left li{
+    margin-left: 64px;
+}
+
+.top-left li:last-child{
+    margin-left: 0;
+}
+
+.top-left li i{
+    margin-left: 20px;
+}
+
+.header-logo{
+    float: right;
+}
+
+
+
+.main-menu .navigation li.dropdown .dropdown-btn{
+    right: 300px;
+    border-right: 1px solid #f3f3f314;
+}
+
+.main-menu .navigation > li:before{
+    right: 30%;
+}
+
+.main-menu .navigation li ul{
+    right: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.main-menu .navigation li ul li ul{
+    right: 100%;
+}
+
+.main-menu .navigation li ul li a {
+    text-align: right;
+
+}
+.main-menu .navigation li a {
+    text-align: right;
+}
+
+.main-menu .navbar-header .navbar-toggle{
+    float: left;
+}
+.main-menu .navigation {
+    display: flex;
+}
+@media only screen and (max-width: 991px){
+    .main-menu .navigation li ul li ul{
+        right: auto;
+    }
+
+    .main-menu .navigation {
+        display: block;
+        overflow: hidden;
+    }
+}
+@media only screen and (max-width: 420px) {
+
+    .main-menu  ul {
+        display: flex;
+    }
+}
+

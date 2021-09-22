@@ -125,6 +125,7 @@
                autoplaySpeed: 2000,
                slidesToShow: 2,
                slidesToScroll: 1,
+               rtl: $('html').attr('dir') == 'rtl' ? true : false,
                responsive: [
                    {
                        breakpoint: 1200,
@@ -156,6 +157,7 @@
                autoplaySpeed: 2000,
                slidesToShow: 1,
                slidesToScroll: 1,
+               rtl: $('html').attr('dir') == 'rtl' ? true : false,
                responsive: [
                    {
                        breakpoint: 1200,
@@ -188,6 +190,7 @@
                 autoplaySpeed: 2000,
                 slidesToShow: 3,
                 slidesToScroll: 1,
+                rtl: $('html').attr('dir') == 'rtl' ? true : false,
                 responsive: [
                     {
                         breakpoint: 1200,
@@ -223,6 +226,7 @@
                autoplaySpeed: 2000,
                slidesToShow: 3,
                slidesToScroll: 1,
+               rtl: $('html').attr('dir') == 'rtl' ? true : false,
                responsive: [
                    {
                        breakpoint: 1200,
@@ -257,6 +261,7 @@
                 autoplaySpeed: 2000,
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                rtl: $('html').attr('dir') == 'rtl' ? true : false,
                 responsive: [
                     {
                         breakpoint: 1200,

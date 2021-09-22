@@ -5,7 +5,7 @@
 <script src="{{asset('front/js/leaflet.min.js')}}"></script>
 <script src="{{asset('front/js/appear.js')}}"></script>
 <!-- Custom script -->
-<script src="{{asset('front/js/script.js?v=1.3')}}"></script>
+<script src="{{asset('front/js/script.js?v=1.4')}}"></script>
 @yield('js')
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 

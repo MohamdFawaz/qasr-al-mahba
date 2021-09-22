@@ -154,8 +154,8 @@
 
     <section class="follow-us-section pt-50 rpt-50">
         <div class="container">
-            <h2 class="titillium-font text-lg-right text-sm-center">{{trans('web.page.contact.follow_us')}}</h2>
-            <div class="row float-lg-right d-sm-grid m-sm-auto">
+            <h2 class="titillium-font follow-us-section-title text-sm-center">{{trans('web.page.contact.follow_us')}}</h2>
+            <div class="row follow-us-section-icons d-sm-grid m-sm-auto">
                 <div class="rounded-social-buttons">
                     <a class="social-button facebook" href="{{trans('web.footer.facebook_link')}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="social-button twitter" href="{{trans('web.footer.twitter_link')}}" target="_blank"><i class="fab fa-twitter"></i></a>

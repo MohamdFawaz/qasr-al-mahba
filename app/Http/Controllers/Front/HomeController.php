@@ -55,4 +55,10 @@ class HomeController
         }
     }
 
+    public function setCurrentLocale($locale)
+    {
+        \Session::put('locale', $locale);
+        return redirect()->to(url('/'));
+    }
+
 }

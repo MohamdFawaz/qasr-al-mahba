@@ -61,6 +61,10 @@ a {
     text-decoration: none;
 }
 
+div {
+    direction: rtl;
+}
+
 a:hover,
 a:focus,
 a:visited {
@@ -166,14 +170,20 @@ a.theme-btn {
     text-align: center;
 }
 
+.our-success a.theme-btn {
+    float: right;
+}
+
+
 .theme-btn i {
     font-size: 11px;
     padding-left: 10px;
     transition: 0.5s;
+    transform: rotate(180deg);
 }
 
 .theme-btn:hover i {
-    transform: translateX(5px);
+    transform: translate(5px, 0) rotate(180deg);
 }
 
 /** Social Link Style One */
@@ -353,8 +363,6 @@ input[type="submit"]:focus {
 }
 
 
-
-
 /****************************************************** */
 /****************** 02. Hero Section  *************** */
 /****************************************************** */
@@ -431,6 +439,7 @@ input[type="submit"]:focus {
     display: flex;
     align-items: center;
 }
+
 .mining-process-page-banner {
     height: 520px;
     margin-top: 50px;
@@ -499,12 +508,13 @@ input[type="submit"]:focus {
 
 .success-item {
     display: flex;
-    padding-left: 16px;
-    border-right: 1px solid #FF8432;
+    padding-right: 16px;
+    border-left: 1px solid #FF8432;
+    text-align: right;
 }
 
 .success-wrap .row > div:last-child .success-item {
-    border-right: 0px;
+    border-left: 0px;
 }
 
 .success-item .success-icon {
@@ -671,7 +681,6 @@ input[type="submit"]:focus {
     left: 0;
     width: 100%;
 }
-
 
 
 .current-video {
@@ -880,6 +889,10 @@ input[type="submit"]:focus {
 
 .partners-section .slick-list {
     margin-left: 100px;
+}
+
+.partners-section .container h4 {
+    text-align: right;
 }
 
 .partners-section .partner-item {
@@ -1905,14 +1918,21 @@ input[type="submit"]:focus {
 }
 
 
-
 .case-middle .middle-content p {
     text-align: inherit;
     margin-bottom: 25px;
 }
 
-.middle-content {
-    text-align: center;
+.even-resource-text {
+    text-align: right;
+}
+
+.odd-resource-text, .odd-resource-text p, .odd-image {
+    text-align: left;
+}
+
+.mining-code-content {
+    text-align: right;
 }
 
 /* Case Sidebar */
@@ -1920,6 +1940,7 @@ input[type="submit"]:focus {
 
 .case-sidebar .sidebar-widget {
     margin-bottom: 80px;
+    text-align: right;
 }
 
 .case-sidebar .sidebar-widget:last-child {
@@ -2158,6 +2179,7 @@ input[type="submit"]:focus {
     color: #ffffff;
     line-height: 28px;
     margin-bottom: 45px;
+    text-align: right;
 }
 
 .widget {
@@ -2168,6 +2190,11 @@ input[type="submit"]:focus {
 .widget ul li,
 .widget ul li a {
     color: #D0D0D0;
+    text-align: right;
+}
+
+.widget ul li {
+    padding: 0 15px 0 0;
 }
 
 .widget ul li a:hover,
@@ -2232,12 +2259,12 @@ input[type="submit"]:focus {
 }
 
 .menu-widget li:before {
-    content: "\f101";
+    content: "\f100";
     font-family: "Font Awesome 5 Free";
     position: absolute;
     font-size: 12px;
     font-weight: 600;
-    left: 0;
+    right: 0;
     top: 0;
 }
 
@@ -2308,10 +2335,6 @@ input[type="submit"]:focus {
     justify-content: center;
     align-items: center;
     width: 55%;
-}
-
-.footer-menu {
-    margin-left: auto;
 }
 
 .footer-menu li {
@@ -2454,12 +2477,16 @@ input[type="submit"]:focus {
     align-self: center;
     position: absolute;
     z-index: 10;
+    font-weight: bold;
+}
+
+.codes-label {
+    text-align: right;
 }
 
 .img-border-solid {
     border: 2px solid #000;
 }
-
 
 
 .text-shadow-white {
@@ -2470,6 +2497,7 @@ input[type="submit"]:focus {
 .category-title {
     color: #18395f;
 }
+
 .category-title span {
     color: #000 !important;
 }
@@ -2518,9 +2546,11 @@ input[type="submit"]:focus {
 .tcb-product-info {
     padding: 15px;
 }
+
 .tcb-product-title {
     text-align: center;
 }
+
 .tcb-product-title h4 {
     margin-top: 0;
     white-space: nowrap;
@@ -2569,40 +2599,32 @@ input[type="submit"]:focus {
     color: #fff;
     border-radius: 24px;
 }
-.even-resource-text{
-    text-align: left;
-}
-
-.odd-resource-text, .odd-resource-text p{
-    text-align: right;
-}
-
-
-.mining-code-content{
-    text-align: left;
-}
-
 
 .details .back-link a svg {
     margin-right: 10px;
     vertical-align: text-top;
     display: inline-block;
 }
+
 /* CSS used here will be applied after bootstrap.css */
 #carousel {
     margin-top: 0px;
 }
+
 .item .thumb {
     width: 25%;
     cursor: pointer;
     float: left;
 }
+
 .item .thumb img, .item img {
     width: 100%;
 }
+
 .bt_bb_column_inner > a:focus, a:hover {
     text-decoration: none !important;
 }
+
 .bt_bb_service_content_text {
     color: #000;
 }
@@ -2620,30 +2642,21 @@ input[type="submit"]:focus {
     position: relative;
     margin-bottom: 30px;
 }
+
 .underline:after {
     position: absolute;
     content: '';
     height: 2px;
-    /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
     bottom: -15px;
-
-
-    /******
-    optional values below
-    ******/
-
-    /* center - (optional) use with adjusting width   */
     margin: 0 auto;
-    left: 0;
+    right: 0;
     width: 20%;
     background: orange;
-
-    /* optional animation */
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 
@@ -2652,6 +2665,11 @@ input[type="submit"]:focus {
     width: 50%;
     background: #18395f;
 }
+
+.get-in-touch-list {
+    text-align: right;
+}
+
 .tiles-section-holder {
     box-shadow: 0 0 0 1em #18385f inset;
     color: #fff;
@@ -2683,14 +2701,24 @@ input[type="submit"]:focus {
     order: 1;
 }
 
+.tiles-section-holder i {
+    transform: rotate(180deg);
+}
+
+.case-details-content .section-title {
+    text-align: right;
+}
+
 .why-us-images {
     display: block;
     text-align: center;
 }
+
 .why-us-image {
     max-width: 75px;
     text-align: center;
 }
+
 .our-expertise {
     background: #f1f1f1;
     padding: 35px 40px;
@@ -2699,9 +2727,11 @@ input[type="submit"]:focus {
 .expertise-content {
     padding: 30px 100px;
 }
+
 .expertise-list li {
     margin-top: 10px;
 }
+
 .expertise-list li:before {
     content: '✔';
     width: 25px;
@@ -2719,6 +2749,7 @@ input[type="submit"]:focus {
     top: -110px;
     left: -80px;
 }
+
 .contact-us-timerange {
     font-size: 14px;
 }
@@ -2727,6 +2758,7 @@ input[type="submit"]:focus {
     background: #f1f1f1;
     padding: 5px 5px;
 }
+
 .get-in-touch-list li {
     color: #000;
     font-size: 20px;
@@ -2741,24 +2773,27 @@ input[type="submit"]:focus {
 .follow-us-section .rounded-social-buttons {
     float: right;
 }
-.float{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
     background-color: #007bff;
     color: #FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:30px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
     box-shadow: 2px 2px 3px #999;
-    z-index:100;
+    z-index: 100;
 }
-.my-float{
-    margin-top:16px;
+
+.my-float {
+    margin-top: 16px;
     color: white;
 }
+
 .codes-table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -2771,4 +2806,19 @@ input[type="submit"]:focus {
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+    .follow-us-section-title {
+        text-align: right !important;
+    }
+
+    .follow-us-section-icons {
+        float: right;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .scroll-top {
+        margin: auto;
+    }
 }

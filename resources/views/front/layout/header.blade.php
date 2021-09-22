@@ -30,9 +30,24 @@
                                         <li><a href="{{route('mining-process')}}">{{trans('web.header.mining_process')}}</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void">{{trans('web.header.product')}} </a></li>
-                                <li class="@if(Request::segment(1) == 'contact-us') current-menu-item @endif"><a href="{{route('contact')}}">{{trans('web.header.contact')}} </a></li>
-                                <li class="@if(Request::segment(1) == 'about') current-menu-item @endif"><a href="{{route('about')}}">{{trans('web.header.about')}} </a></li>
+                                <li>
+                                    <a href="javascript:void(0)">{{trans('web.header.product')}}</a>
+                                </li>
+                                <li class="@if(Request::segment(1) == 'contact-us') current-menu-item @endif">
+                                    <a href="{{route('contact')}}">{{trans('web.header.contact')}}</a>
+                                </li>
+                                <li class="@if(Request::segment(1) == 'about') current-menu-item @endif">
+                                    <a href="{{route('about')}}">{{trans('web.header.about')}}</a>
+                                </li>
+                                <li class="dropdown"><a href="javascript:void(0)">{{trans('web.header.language')}}</a>
+                                    <ul>
+                                        @foreach(getLocales() as $locale)
+                                        <li>
+                                            <a href="{{route('switch-locale',$locale)}}">{{$locale}}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </nav>

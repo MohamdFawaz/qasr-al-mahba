@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{app()->getLocale()}}">
+<html lang="{{app()->getLocale()}}" @if(app()->getLocale() == 'ar') dir="rtl" @else dir="ltr" @endif>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +19,14 @@
     <link rel="stylesheet" href="{{asset('front/css/spacing.min.css')}}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css?v=1.1')}}">
+    @if(app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="{{asset('front/css/menu.rtl.min.css?v=1.0')}}">
+        <link rel="stylesheet" href="{{asset('front/css/style.rtl.min.css?v=1.0')}}">
+    @else
+        <link rel="stylesheet" href="{{asset('front/css/menu.min.css?v=1.7')}}">
+        <link rel="stylesheet" href="{{asset('front/css/style.min.css?v=1.19')}}">
+    @endif
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/style.min.css?v=1.18')}}">
     @yield('css')
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 </head>

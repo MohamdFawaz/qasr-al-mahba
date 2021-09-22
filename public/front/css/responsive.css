@@ -72,6 +72,13 @@
 
 
 @media only screen and (min-width: 992px) {
+    .follow-us-section-title{
+        text-align: right !important;
+    }
+
+    .follow-us-section-icons {
+        float: right;
+    }
     .about-content {
         max-width: 460px;
     }
@@ -534,6 +541,7 @@
     .success-item {
         padding-left: 0;
         border-right: none !important;
+        border-left: none !important;
     }
     .success-wrap {
         padding-left: 70px;

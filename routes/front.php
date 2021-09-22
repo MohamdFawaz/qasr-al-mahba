@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/mining-license', [MiningController::class, 'index'])->name('mining-license');
 //Route::get('/mining-license-code-details/{code}', [MiningController::class, 'getMiningLicenseCodeDetails'])->name('mining-license-codes');
@@ -34,5 +34,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 
 Route::post('/contact-us', [HomeController::class, 'submitContact'])->name('submit-contact');
+
+Route::get('/{locale}',[HomeController::class,'setCurrentLocale'])->name('switch-locale');
 
 Route::post('/chat/login', [\App\Http\Controllers\vendor\Chatify\User\MessagesController::class,'userLogin'])->name('chat.login-user');

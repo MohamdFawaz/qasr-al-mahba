@@ -100,9 +100,17 @@
                     <img src="{{asset('images/construction-car.png')}}">
                 </div>
                 <div class="col-4">
+                    @if(app()->getLocale() == 'ar')
+                    <h2 class="titillium-font m-auto text-center mining-resources">
+                        <span>{{trans('web.page.mining.title.resources')}}</span> <br>
+                        {{trans('web.page.mining.title.mining')}}
+                    </h2>
+                    @else
                     <h2 class="titillium-font m-auto text-center mining-resources">
                         {{trans('web.page.mining.title.mining')}} <br>
-                        <span>{{trans('web.page.mining.title.resources')}}</span></h2>
+                        <span>{{trans('web.page.mining.title.resources')}}</span>
+                    </h2>
+                    @endif
                 </div>
                 <div class="col-4">
                     <img src="{{asset('images/construction-car.png')}}">
@@ -116,13 +124,13 @@
                                         <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
                                              data-wow-delay=".5s">
                                             <div class="col-md-6 col-sm-12">
-                                                <div class="middle-content">
+                                                <div class="even-resource-text">
                                                     <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <div class="middle-image ml-auto">
+                                                <div class="even-image ml-auto">
                                                     <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
                                                 </div>
                                             </div>
@@ -137,12 +145,12 @@
                                         <div class="row mt-10 wow fadeInUp animated" data-wow-duration="1s"
                                              data-wow-delay=".5s">
                                             <div class="col-md-6 col-sm-12">
-                                                <div class="middle-image">
+                                                <div class="odd-image">
                                                     <img src="{{$resource->image}}" alt="{{$resource->id}}-image">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
-                                                <div class="middle-content">
+                                                <div class="odd-resource-text">
                                                     <h4>{{$resource->title}}</h4>
                                                     <p>{{$resource->description}}</p>
                                                 </div>
@@ -181,7 +189,7 @@
                 <div class="col-lg-6 d-lg-block d-sm-none">
                     <div class="text-center bg-success text-white d-none success-code">{{trans('web.page.mining.code_copied')}}</div>
                     <div class="form-group">
-                        <label for="sel1">{{trans('web.page.mining.codes_title')}}</label>
+                        <label for="sel1" class="codes-label">{{trans('web.page.mining.codes_title')}}</label>
                         <select class="form-control" onchange="copyToClipboard(this, 'select')" id="code-select">
                             <option value="">{{trans('web.page.mining.select_code_placeholder')}}</option>
                             @foreach($codes as $code)
@@ -189,7 +197,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="text-center mt-200">
+                    <div class="mining-code-content mt-200">
                         {{trans('web.page.mining.code_content')}}
                     </div>
                 </div>
